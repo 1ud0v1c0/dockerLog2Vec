@@ -77,29 +77,10 @@ fi
 
 # Cambia directory nel progetto 
 print_info "Cambio della directory nel progetto Log2Vec..."
-run_command "cd $(pwd)/Log2Vec" \
-            "Errore nel cambio di directory." \
-            "Directory cambiata con successo."
-
-print_status "Pulizia della cartella 'data'..." "🔄"
-# Pulisce la cartella 'data'
-run_command "rm -rf data/*" \
-            "Errore nella pulizia della cartella 'data'." \
-            "Cartella 'data' pulita."
-
-print_status "Copia dei file dei log nella cartella 'data'..." "🔄"
-# Copia i file dei log nel contenitore (assumendo che siano montati come volumi)
-if [ -d "/logs" ]; then
-    run_command "cp /logs/* data/" \
-                "Errore nella copia dei log nella cartella 'data'." \
-                "Log copiati nella cartella 'data'."
-else
-    print_error "Directory /logs non trovata. Assicurati di montare i volumi correttamente."
-    exit 1
-fi
+cd /app/Log2Vec
 
 # Trova il nome del file dei log senza estensione
-LOG_FILE_PATH=$(ls data/*.log)
+LOG_FILE_PATH=$(ls /logs/*.log)
 if [ $? -ne 0 ]; then
     print_error "Errore nella ricerca del file di log."
     exit 1
@@ -108,98 +89,16 @@ BASE_NAME=$(basename "$LOG_FILE_PATH" .log)
 
 print_status "Nome base del file di log: $BASE_NAME" "✔️"
 
+### pipeline.py ###
+print_status "Esecuzione del file pipeline.py ..." "🔄"
+run_command "python3 pipeline.py -i /logs/$BASE_NAME.log -t $BASE_NAME -o /logs/results/" \
+            "Errore durante l'esecuzione di pipeline.py." \
+            "Esecuzione di pipeline.py completata correttamente"
 
-### Preprocessing ###
-print_status "Esecuzione del preprocessing del log..." "🔄"
-run_command "python code/preprocessing.py -rawlog ./data/${BASE_NAME}.log" \
-            "Errore durante il preprocessing del log." \
-            "Preprocessing del log completato."
-
-
-
-### Estrazione di sinonimi e antonimi ###
-print_status "Estrazione di sinonimi e antonimi..." "🔄"
-run_command "python code/get_syn_ant.py -logs ./data/${BASE_NAME}_without_variables.log -ant_file ./middle/${BASE_NAME}_ants.txt -syn_file ./middle/${BASE_NAME}_syns.txt" \
-            "Errore durante l'estrazione di sinonimi e antonimi." \
-            "Estrazione di sinonimi e antonimi completata."
-
-
-
-### Estrazione di triplette ###
-print_status "Estrazione di triplette..." "🔄"
-run_command "python code/get_triplet.py data/${BASE_NAME}_without_variables.log middle/${BASE_NAME}_triplet.txt" \
-            "Errore durante l'estrazione delle triplette." \
-            "Estrazione delle triplette completata."
-
-
-
-### Preparazione per l'addestramento ###
-print_status "Preparazione dei dati per l'addestramento..." "🔄"
-run_command "python code/getTempLogs.py -input data/${BASE_NAME}_without_variables.log -output middle/${BASE_NAME}_for_training.log" \
-            "Errore durante la preparazione dei dati per l'addestramento." \
-            "Preparazione dei dati per l'addestramento completata."
-
-
-
-### Compila il codice LRWE ###
-print_status "Compilazione del codice LRWE..." "🔄"
-print_info "Cambio di directory per la compilazione code/LRWE/src/" 
-run_command "cd code/LRWE/src/" \
-            "Errore nel cambio di directory per la compilazione." \
-            "Directory cambiata con successo."
-
-run_command "make clean" \
-            "Errore durante il comando 'make clean'." \
-            "Pulizia precedente alla compilazione completata."
-
-run_command "make" \
-            "Errore durante la compilazione del codice LRWE." \
-            "Compilazione del codice LRWE completata."
-
-
-
-### Esegui l'addestramento ###
-print_status "Esecuzione dell'addestramento del modello LRWE..." "🔄"
-run_command "./lrcwe -train /app/Log2Vec/middle/${BASE_NAME}_for_training.log -synonym /app/Log2Vec/middle/${BASE_NAME}_syns.txt -antonym /app/Log2Vec/middle/${BASE_NAME}_ants.txt -output /app/Log2Vec/middle/${BASE_NAME}_words.model -save-vocab /app/Log2Vec/middle/${BASE_NAME}.vocab -belta-rel 0.8 -alpha-rel 0.01 -alpha-ant 0.3 -size 32 -min-count 1 -triplet /app/Log2Vec/middle/${BASE_NAME}_triplet.txt" \
-            "Errore durante l'addestramento del modello LRWE." \
-            "Addestramento del modello LRWE completato."
-
-
-# Torna alla directory principale 
-print_info "Torno alla directory principale..."
-run_command "cd ../../../" \
-            "Errore nel cambio di directory dopo la compilazione." \
-            "Directory principale raggiunta."
-
-
-
-### Crea il dataset e addestra il modello ###
-print_status "Creazione del dataset e addestramento del modello..." "🔄"
-run_command "python code/mimick/make_dataset.py --vectors /app/Log2Vec/middle/${BASE_NAME}_words.model --w2v-format --output /app/Log2Vec/middle/${BASE_NAME}_words.pkl" \
-            "Errore nella creazione del dataset." \
-            "Dataset creato con successo."
-
-run_command "python code/mimick/model.py --dataset /app/Log2Vec/middle/${BASE_NAME}_words.pkl --vocab /app/Log2Vec/middle/${BASE_NAME}.vocab --output /app/Log2Vec/middle/${BASE_NAME}_oov.vector" \
-            "Errore durante l'addestramento del modello Mimick." \
-            "Addestramento del modello Mimick completato."
-
-
-
-### Genera i vettori per i log ###
-print_status "Generazione dei vettori per i log..." "🔄"
-run_command "python code/Log2Vec.py -logs ./data/${BASE_NAME}_without_variables.log -word_model /app/Log2Vec/middle/${BASE_NAME}_words.model -log_vector_file /app/Log2Vec/middle/${BASE_NAME}_log.vector -dimension 32" \
-            "Errore durante la generazione dei vettori per i log." \
-            "Generazione dei vettori per i log completata."
-
-# Copia il file generato nella cartella volume /logs
-print_status "Copia del file ${BASE_NAME}_log.vector nella cartella /logs..." "🔄"
-if [ -d "/logs" ]; then
-    run_command "cp /app/Log2Vec/middle/${BASE_NAME}_log.vector /logs/" \
-                "Errore nella copia del file ${BASE_NAME}_log.vector nella cartella /logs." \
-                "File ${BASE_NAME}_log.vector copiato nella cartella /logs."
-else
-    print_error "Directory /logs non trovata. Assicurati di montare i volumi correttamente."
-    exit 1
-fi
+### log2vec.py ###
+print_status "Esecuzione del file log2vec.py ..." "🔄"
+run_command "python log2vec.py -i /logs/results -t $BASE_NAME" \
+            "Errore durante l'esecuzione di log2vec.py." \
+            "Esecuzione di log2vec.py completata correttamente"
 
 print_success "Processo completato con successo."

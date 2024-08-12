@@ -16,7 +16,7 @@ RUN apt-get update && \
 
 # Installa le dipendenze Python
 RUN pip install --upgrade pip
-RUN pip install nltk spacy progressbar2 gensim dynet
+RUN pip install nltk spacy progressbar2 gensim==3.8.3 dynet
 
 # Scarica i modelli e risorse necessari
 RUN python -m nltk.downloader wordnet
