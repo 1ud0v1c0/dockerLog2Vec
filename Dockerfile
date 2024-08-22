@@ -41,6 +41,7 @@ RUN git clone https://github.com/NetManAIOps/Log2Vec.git ./Log2Vec
 COPY run_log2vec.sh /app/
 COPY pipeline.py /app/Log2Vec
 COPY plot_cdf.py /app/Log2Vec
+COPY email_send.py /app/Log2Vec
 
 # Esegui lo script bash come entrypoint
 ENTRYPOINT ["/app/run_log2vec.sh"]

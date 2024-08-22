@@ -21,7 +21,7 @@ print_status() {
 }
 
 # File di log
-LOG_FILE="$(pwd)/process_log2vec.log"
+LOG_FILE="/logs/process_log2vec.log"
 
 # Funzione per stampare messaggi di successo
 print_success() {
@@ -40,7 +40,8 @@ print_info() {
 
 # Funzione per eseguire un comando e verificare il risultato
 run_command() {
-    $1
+    echo "Esecuzione: $1"
+    eval $1
     if [ $? -ne 0 ]; then
         print_error "$2"
         exit 1
@@ -52,6 +53,15 @@ run_command() {
 trap 'print_error "Processo interrotto inaspettatamente."; exit 1' INT TERM
 
 print_status "La directory corrente è: $(pwd)"
+
+# Assicurati che la directory di log esista
+LOG_DIR=$(dirname "$LOG_FILE")
+if [ ! -d "$LOG_DIR" ]; then
+    print_info "La directory di log non esiste, la creo ora..."
+    run_command "mkdir -p $LOG_DIR" \
+                "Errore nella creazione della directory di log." \
+                "Directory di log creata: $LOG_DIR"
+fi
 
 # Crea il file di log se non esiste
 if [ ! -f "$LOG_FILE" ]; then
@@ -77,10 +87,12 @@ fi
 
 # Cambia directory nel progetto 
 print_info "Cambio della directory nel progetto Log2Vec..."
-cd /app/Log2Vec
+run_command "cd /app/Log2Vec" \
+            "Errore durante il cambio di directory in /app/Log2Vec." \
+            "Cambio directory in /app/Log2Vec riuscito."
 
 # Trova il nome del file dei log senza estensione
-LOG_FILE_PATH=$(ls /logs/*.log)
+LOG_FILE_PATH=$(ls /logs/*.log | grep -v 'process_log2vec.log')
 if [ $? -ne 0 ]; then
     print_error "Errore nella ricerca del file di log."
     exit 1
@@ -90,17 +102,16 @@ BASE_NAME=$(basename "$LOG_FILE_PATH" .log)
 print_status "Nome base del file di log: $BASE_NAME" "✔️"
 
 print_status "Esecuzione di make clean" "🔄"
-
-run_command "cd code/LRWE/src/"
-run_command "make clean"
-run_command "make"
+run_command "cd code/LRWE/src && make clean && make" \
+            "Errore durante l'esecuzione di make clean e make." \
+            "Esecuzione di make clean e make completata con successo"
 
 run_command "cd ../../.."
 
 
 ### pipeline.py ###
 print_status "Esecuzione del file pipeline.py ..." "🔄"
-run_command "python3 pipeline.py -i /logs/$BASE_NAME.log -t $BASE_NAME -o /logs/results/ -n 50" \
+run_command "python pipeline.py -i /logs/$BASE_NAME.log -t $BASE_NAME -o /logs/results/ -n 50" \
             "Errore durante l'esecuzione di pipeline.py." \
             "Esecuzione di pipeline.py completata correttamente"
 
@@ -109,7 +120,6 @@ run_command "python plot_cdf.py /logs/results/all_scores.txt /logs/results/cdf_p
             "Errore durante il calcolo della CDF." \
             "Esecuzione della CDF completata correttamente"
 
-
 print_success "Processo completato con successo."
 
-run_command "python3 email_send.py"
+run_command "python email_send.py -t $BASE_NAME -d $DURATION"
