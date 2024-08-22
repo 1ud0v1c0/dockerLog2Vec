@@ -89,16 +89,27 @@ BASE_NAME=$(basename "$LOG_FILE_PATH" .log)
 
 print_status "Nome base del file di log: $BASE_NAME" "✔️"
 
+print_status "Esecuzione di make clean" "🔄"
+
+run_command "cd code/LRWE/src/"
+run_command "make clean"
+run_command "make"
+
+run_command "cd ../../.."
+
+
 ### pipeline.py ###
 print_status "Esecuzione del file pipeline.py ..." "🔄"
-run_command "python3 pipeline.py -i /logs/$BASE_NAME.log -t $BASE_NAME -o /logs/results/" \
+run_command "python3 pipeline.py -i /logs/$BASE_NAME.log -t $BASE_NAME -o /logs/results/ -n 50" \
             "Errore durante l'esecuzione di pipeline.py." \
             "Esecuzione di pipeline.py completata correttamente"
 
-### log2vec.py ###
-print_status "Esecuzione del file log2vec.py ..." "🔄"
-run_command "python log2vec.py -i /logs/results -t $BASE_NAME" \
-            "Errore durante l'esecuzione di log2vec.py." \
-            "Esecuzione di log2vec.py completata correttamente"
+print_status "Calcolo della CDF dei dati..." "🔄"
+run_command "python plot_cdf.py /logs/results/all_scores.txt /logs/results/cdf_plot.png" \
+            "Errore durante il calcolo della CDF." \
+            "Esecuzione della CDF completata correttamente"
+
 
 print_success "Processo completato con successo."
+
+run_command "python3 email_send.py"

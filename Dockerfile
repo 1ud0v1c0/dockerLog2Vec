@@ -16,7 +16,16 @@ RUN apt-get update && \
 
 # Installa le dipendenze Python
 RUN pip install --upgrade pip
-RUN pip install nltk spacy progressbar2 gensim==3.8.3 dynet
+RUN pip install nltk \
+                spacy \
+                progressbar2 \
+                gensim==3.8.3 \
+                dynet \
+                matplotlib \
+                requests \
+                pandas \
+                numpy
+
 
 # Scarica i modelli e risorse necessari
 RUN python -m nltk.downloader wordnet
@@ -30,6 +39,8 @@ RUN git clone https://github.com/NetManAIOps/Log2Vec.git ./Log2Vec
 
 # Copia lo script bash nel contenitore
 COPY run_log2vec.sh /app/
+COPY pipeline.py /app/Log2Vec
+COPY plot_cdf.py /app/Log2Vec
 
 # Esegui lo script bash come entrypoint
 ENTRYPOINT ["/app/run_log2vec.sh"]

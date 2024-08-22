@@ -1,0 +1,2000 @@
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root sortrand part
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root sortrand part
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root sortrand part
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root sortrand part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root sortrand part
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root sortrand part
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root randtxt part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs DataBlockScanner Verification succeeded for
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root rand part
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs DataBlockScanner Verification succeeded for
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Served block to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs DataBlockScanner Verification succeeded for
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs DataBlockScanner Verification succeeded for
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs Served block to
+INFO dfs Received block of size from
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Receiving block src dest
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Receiving block src dest
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Receiving block src dest
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs DataNode Starting thread to transfer block to
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem ask to delete
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Receiving block src dest
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem ask to delete
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs Served block to
+WARN dfs Got exception while serving to
+INFO dfs Served block to
+INFO dfs Served block to
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Served block to
+INFO dfs Received block of size from
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs Served block to
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Receiving block src dest
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Receiving block src dest
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Receiving block src dest
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block src dest of size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSNamesystem ask to delete
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSNamesystem ask to delete
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs PacketResponder for block terminating
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs PacketResponder for block terminating
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs Receiving block src dest
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs PacketResponder for block terminating
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Receiving block src dest
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs PacketResponder for block terminating
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs FSNamesystem ask to replicate to datanode s
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block src dest of size
+INFO dfs Receiving block src dest
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSNamesystem NameSystem delete is added to invalidSet of
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs PacketResponder for block terminating
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem ask to delete
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs DataBlockScanner Verification succeeded for
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Received block of size from
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSDataset Deleting block file mnt hadoop dfs data current
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs PacketResponder for block terminating
+INFO dfs FSNamesystem NameSystem allocateBlock user root part
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs FSNamesystem NameSystem addStoredBlock blockMap updated is added to size
+INFO dfs PacketResponder for block terminating
+INFO dfs PacketResponder for block terminating
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs Receiving block src dest
+INFO dfs Received block of size from
+INFO dfs Receiving block src dest
+INFO dfs PacketResponder for block terminating
+INFO dfs Receiving block src dest
