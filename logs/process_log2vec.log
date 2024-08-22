@@ -1,7 +1,313 @@
-Inizio processo: Thu Aug 22 17:13:32 UTC 2024
+Inizio processo: Thu Aug 22 18:29:11 UTC 2024
 [0;33m[1m🔄  Controllo dell'esistenza della cartella Log2Vec...[0m
 
 [0;33m[1m🔄  Il repository Log2Vec è già stato clonato.[0m
 
 [0;33m[1m🔄  Cambio della directory nel progetto Log2Vec...[0m
+
+Esecuzione: cd code/LRWE/src && make clean && make
+rm -rf word2vec lrcwe
+g++ word2vec.c -o word2vec -lm -pthread -Ofast -march=native -Wall -funroll-loops -Wno-unused-result
+g++ lrcwe.c -o lrcwe -lm -pthread -Ofast -march=native -Wall -funroll-loops -Wno-unused-result
+[0;32m[1m✔️  Esecuzione di make clean e make completata con successo[0m
+
+Esecuzione: python pipeline.py -i /logs/HDFS.log -t HDFS -o /logs/results/ -n 1
+rawlogs:/logs/HDFS.log
+variables have been removed
+logs without variables:/logs/results/HDFS/without_variables.log
+Running iteration 1/1
+input: /logs/results/HDFS/without_variables.log
+syn_file /logs/results/HDFS/sys.txt
+ant_file /logs/results/HDFS/ants.txt
+INFO is added
+dfs Got exception
+delete is added
+thread transfer block
+input: /logs/results/HDFS/without_variables.log 
+output: /logs/results/HDFS/for_training.log
+alpha:0.050000, alpha_syn:0.025000, alpha_ant:0.300000, alpha_rel:0.010000
+belta_syn:0.700000, belta_ant:0.200000, belta_rel:0.800000
+Starting training using file /logs/results/HDFS/for_training.log
+train_file: /logs/results/HDFS/for_training.log 
+word_num:54
+Vocab size: 55
+Words in train file: 16350
+triplet file total line: 5, relation num: 3, match: 5
+synonyms file total line: 21, words: 20, ignore words: 0
+antonyms file total line: 1, words: 1, ignore words: 0
+Total in Embeddings vocabulary: 55
+Training set character count:  41
+[dynet] random seed: 2590120696
+[dynet] allocating memory: 512MB
+[dynet] memory allocation done.
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 12% (7 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 25% (14 of 54) |######                  | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 38% (21 of 54) |#########               | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 53% (29 of 54) |############            | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 66% (36 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 75% (41 of 54) |##################      | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 87% (47 of 54) |####################    | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 98% (53 of 54) |####################### | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=9 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 11% (6 of 54) |##                       | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 18% (10 of 54) |####                    | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 31% (17 of 54) |#######                 | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 40% (22 of 54) |#########               | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 51% (28 of 54) |############            | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 61% (33 of 54) |##############          | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 72% (39 of 54) |#################       | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 83% (45 of 54) |####################    | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 92% (50 of 54) |######################  | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=4 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 12% (7 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 25% (14 of 54) |######                  | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 37% (20 of 54) |########                | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 51% (28 of 54) |############            | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 66% (36 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 79% (43 of 54) |###################     | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 92% (50 of 54) |######################  | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=3 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 11% (6 of 54) |##                       | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 22% (12 of 54) |#####                   | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 35% (19 of 54) |########                | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 50% (27 of 54) |############            | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 62% (34 of 54) |###############         | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 75% (41 of 54) |##################      | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 90% (49 of 54) |#####################   | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=2 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 12% (7 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 29% (16 of 54) |#######                 | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 44% (24 of 54) |##########              | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 57% (31 of 54) |#############           | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 70% (38 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 83% (45 of 54) |####################    | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 96% (52 of 54) |####################### | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=3 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 14% (8 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 31% (17 of 54) |#######                 | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 44% (24 of 54) |##########              | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 59% (32 of 54) |##############          | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 74% (40 of 54) |#################       | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 88% (48 of 54) |#####################   | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=7 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 12% (7 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 29% (16 of 54) |#######                 | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 44% (24 of 54) |##########              | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 55% (30 of 54) |#############           | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 68% (37 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 81% (44 of 54) |###################     | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 96% (52 of 54) |####################### | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=9 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 14% (8 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 31% (17 of 54) |#######                 | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 46% (25 of 54) |###########             | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 61% (33 of 54) |##############          | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 75% (41 of 54) |##################      | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 90% (49 of 54) |#####################   | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=11 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 12% (7 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 27% (15 of 54) |######                  | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 40% (22 of 54) |#########               | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 55% (30 of 54) |#############           | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 70% (38 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 85% (46 of 54) |####################    | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 98% (53 of 54) |####################### | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=10 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 14% (8 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 31% (17 of 54) |#######                 | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 46% (25 of 54) |###########             | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 61% (33 of 54) |##############          | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 75% (41 of 54) |##################      | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 88% (48 of 54) |#####################   | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=9 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 12% (7 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 25% (14 of 54) |######                  | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 38% (21 of 54) |#########               | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 53% (29 of 54) |############            | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 68% (37 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 81% (44 of 54) |###################     | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 94% (51 of 54) |######################  | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=10 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 12% (7 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 27% (15 of 54) |######                  | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 40% (22 of 54) |#########               | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 55% (30 of 54) |#############           | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 68% (37 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 83% (45 of 54) |####################    | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 96% (52 of 54) |####################### | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=8 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 11% (6 of 54) |##                       | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 24% (13 of 54) |#####                   | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 37% (20 of 54) |########                | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 53% (29 of 54) |############            | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 68% (37 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 83% (45 of 54) |####################    | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 96% (52 of 54) |####################### | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=6 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 11% (6 of 54) |##                       | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 25% (14 of 54) |######                  | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 38% (21 of 54) |#########               | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 53% (29 of 54) |############            | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 66% (36 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 79% (43 of 54) |###################     | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 94% (51 of 54) |######################  | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=6 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 12% (7 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 24% (13 of 54) |#####                   | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 37% (20 of 54) |########                | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 50% (27 of 54) |############            | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 62% (34 of 54) |###############         | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 75% (41 of 54) |##################      | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 87% (47 of 54) |####################    | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=4 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 11% (6 of 54) |##                       | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 22% (12 of 54) |#####                   | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 35% (19 of 54) |########                | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 44% (24 of 54) |##########              | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 55% (30 of 54) |#############           | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 68% (37 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 83% (45 of 54) |####################    | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 96% (52 of 54) |####################### | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=5 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 12% (7 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 29% (16 of 54) |#######                 | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 40% (22 of 54) |#########               | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 55% (30 of 54) |#############           | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 70% (38 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 83% (45 of 54) |####################    | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 96% (52 of 54) |####################### | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=5 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 12% (7 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 27% (15 of 54) |######                  | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 40% (22 of 54) |#########               | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 55% (30 of 54) |#############           | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 70% (38 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 83% (45 of 54) |####################    | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 96% (52 of 54) |####################### | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=2 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 12% (7 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 25% (14 of 54) |######                  | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 38% (21 of 54) |#########               | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 53% (29 of 54) |############            | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 66% (36 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 79% (43 of 54) |###################     | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 94% (51 of 54) |######################  | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=4 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+  0% (0 of 54) |                         | Elapsed Time: 0:00:00 ETA:  --:--:--
+ 12% (7 of 54) |###                      | Elapsed Time: 0:00:00 ETA:  00:00:00
+ 27% (15 of 54) |######                  | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 40% (22 of 54) |#########               | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 55% (30 of 54) |#############           | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 70% (38 of 54) |################        | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 83% (45 of 54) |####################    | Elapsed Time: 0:00:00 ETA:   0:00:00
+ 96% (52 of 54) |####################### | Elapsed Time: 0:00:00 ETA:   0:00:00
+100% (54 of 54) |########################| Elapsed Time: 0:00:00 Time:  0:00:00
+[lr=0.006 clips=3 updates=54]   0% (0 of 1) |                          | Elapsed Time: 0:00:00 ETA:  --:--:--
+100% (1 of 1) |##########################| Elapsed Time: 0:00:00 Time:  0:00:00
+The dy.parameter(...) call is now DEPRECATED.
+        There is no longer need to explicitly add parameters to the computation graph.
+        Any used parameter will be added automatically.
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+None
+log input: /logs/results/HDFS/without_variables.log
+word vectors input: /logs/results/HDFS/embedding.model
+log vectors output: /logs/results/HDFS/log.vector
+end~~
+python code/getTempLogs.py -input /logs/results/HDFS/without_variables.log -output /logs/results/HDFS/for_training.log
+------
+code/LRWE/src/lrcwe -train /logs/results/HDFS/for_training.log -synonym /logs/results/HDFS/sys.txt -antonym /logs/results/HDFS/ants.txt -output /logs/results/HDFS/embedding.model -save-vocab /logs/results/HDFS/embedding.vocab -belta-rel 0.8 -alpha-rel 0.01 -alpha-ant 0.3 -size 32 -min-count 1 -window 2 -triplet triples.txt
+------
+python code/mimick/make_dataset.py --vectors /logs/results/HDFS/embedding.model --w2v-format --output /logs/results/HDFS/words.pkl
+------
+python code/mimick/model.py --dataset /logs/results/HDFS/words.pkl  --vocab /logs/results/HDFS/changed_log/vocab.txt --output /logs/results/HDFS/oov.vector --num-epochs 20 --learning-rate 0.006000 --num-lstm-layers 1 --cosine --dropout -1.000000 --all-from-mimick --hidden-dim 250 --char-dim 36
+------
+ python code/Log2Vec.py -logs /logs/results/HDFS/without_variables.log -word_model /logs/results/HDFS/embedding.model -log_vector_file /logs/results/HDFS/log.vector -dimension 32
+---------
+0.9408762896485385
+Results saved to /logs/results/all_scores.txt
+[0;32m[1m✔️  Esecuzione di pipeline.py completata correttamente[0m
+
+Esecuzione: python plot_cdf.py /logs/results/all_scores.txt /logs/results/cdf_plot.png
+[0;32m[1m✔️  Esecuzione della CDF completata correttamente[0m
+
+[0;32m[1m✔️  Processo completato con successo.[0m
+
+Esecuzione: python email_send.py -t HDFS -d 28 -n 1
+Email inviata correttamente
+[0;32m[1m✔️  E-mail inviata correttamente[0m
 

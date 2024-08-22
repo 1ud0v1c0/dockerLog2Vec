@@ -6,7 +6,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.base import MIMEBase
 from email import encoders
-from email.utils import formataddr
 
 def ensure_dir_exists(directory):
     """ Crea la directory se non esiste """
@@ -16,15 +15,14 @@ def ensure_dir_exists(directory):
 def zip_folder(folder_path, output_path):
     """ Zippa la cartella specificata e salva il file zip all'output_path """
     if not os.path.exists(folder_path):
-        # Crea la cartella se non esiste
-        print(f"La cartella {folder_path} non esiste, la creo ora.")
-        os.makedirs(folder_path)
-        
+        raise FileNotFoundError(f"La cartella {folder_path} non esiste.")
+
     try:
         with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
             for root, dirs, files in os.walk(folder_path):
                 for file in files:
                     file_path = os.path.join(root, file)
+                    # Aggiungi il file all'archivio zip
                     zipf.write(file_path, os.path.relpath(file_path, folder_path))
     except Exception as e:
         print(f"Errore durante la creazione del file zip: {e}")
@@ -35,7 +33,7 @@ def send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, bo
     try:
         # Crea il messaggio email
         msg = MIMEMultipart()
-        msg['From'] = formataddr(('Sender Name', sender_email))
+        msg['From'] = sender_email
         msg['To'] = receiver_email
         msg['Subject'] = subject
 
@@ -43,18 +41,21 @@ def send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, bo
         msg.attach(MIMEText(body, 'plain'))
 
         # Aggiungi l'allegato
-        if attachment_path:
+        if attachment_path and os.path.isfile(attachment_path):
             part = MIMEBase('application', 'octet-stream')
             with open(attachment_path, 'rb') as file:
                 part.set_payload(file.read())
             encoders.encode_base64(part)
             part.add_header('Content-Disposition', f'attachment; filename={os.path.basename(attachment_path)}')
             msg.attach(part)
+        else:
+            print(f"Il file di allegato {attachment_path} non esiste o non è accessibile.")
 
         # Invia l'email
         with smtplib.SMTP(smtp_server, smtp_port) as server:
-            server.starttls()
             server.send_message(msg)
+            print("Email inviata correttamente")
+            
     except Exception as e:
         print(f"Errore durante l'invio dell'email: {e}")
         raise
@@ -70,10 +71,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('-t', help='log type', required=True)  # Argomento obbligatorio per il tipo di log
     parser.add_argument('-d', help='duration in seconds', type=int, required=True)  # Argomento obbligatorio per la durata
+    parser.add_argument('-n', help='number of iterations', type=int)  # Aggiungi un argomento per le iterazioni
     args = parser.parse_args()
 
     # Percorsi e dettagli dell'email
-    folder_to_zip = './logs'
+    folder_to_zip = '/logs'
     zip_file_path = f'./results_{args.t}.zip'
 
     # Assicurati che la directory di destinazione esista
@@ -88,11 +90,12 @@ if __name__ == "__main__":
     # Dettagli email
     smtp_server = 'mail.rm.ingv.it'
     smtp_port = 587
-    sender_email = 'info@log2vec.it'
-    receiver_email = 'ludovicovitielli.lv@gmail.com'
-    subject = 'FINISH TO PROCESS LOGTOVEC'
+    sender_email = 'log2vec@ingv.it'
+    receiver_email = 'ludovico.vitiello@ingv.it'
+    subject = 'FINISH TO PROCESS LOG2VEC'
     body = (f'In allegato i risultati del processo del dataset: {args.t}\n'
-            f'Durata totale: {hours} ore, {minutes} minuti e {seconds} secondi')
+            f'Iterazioni totali eseguite: {args.n}\n'
+            f'Durata totale: {hours} ore, {minutes} minuti e {seconds} secondi\n')
 
     # Invia l'email
     send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, zip_file_path)

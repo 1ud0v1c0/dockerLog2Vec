@@ -23,6 +23,9 @@ print_status() {
 # File di log
 LOG_FILE="/logs/process_log2vec.log"
 
+# Numero di iterazioni (può essere cambiato a seconda delle necessità)
+NUMBER_ITERATION=1
+
 # Funzione per stampare messaggi di successo
 print_success() {
     echo -e "${GREEN}${BOLD}✔️  $1${RESET}\n" | tee -a "$LOG_FILE"
@@ -40,13 +43,18 @@ print_info() {
 
 # Funzione per eseguire un comando e verificare il risultato
 run_command() {
-    echo "Esecuzione: $1"
-    eval $1
-    if [ $? -ne 0 ]; then
-        print_error "$2"
+    local command="$1"
+    local error_msg="$2"
+    local success_msg="$3"
+    
+    echo "Esecuzione: $command" | tee -a "$LOG_FILE"
+    eval "$command" 2>&1 | tee -a "$LOG_FILE"
+    
+    if [ ${PIPESTATUS[0]} -ne 0 ]; then
+        print_error "$error_msg"
         exit 1
     fi
-    print_success "$3"
+    print_success "$success_msg"
 }
 
 # Funzione per la gestione dei segnali di interruzione
@@ -74,6 +82,8 @@ fi
 # Inizia il log
 echo "Inizio processo: $(date)" > "$LOG_FILE"
 
+start_time=$(date +%s)
+
 # Verifica se la cartella di Log2Vec esiste
 print_info "Controllo dell'esistenza della cartella Log2Vec..."
 if [ ! -d "/app/Log2Vec" ]; then
@@ -87,9 +97,7 @@ fi
 
 # Cambia directory nel progetto 
 print_info "Cambio della directory nel progetto Log2Vec..."
-run_command "cd /app/Log2Vec" \
-            "Errore durante il cambio di directory in /app/Log2Vec." \
-            "Cambio directory in /app/Log2Vec riuscito."
+cd /app/Log2Vec
 
 # Trova il nome del file dei log senza estensione
 LOG_FILE_PATH=$(ls /logs/*.log | grep -v 'process_log2vec.log')
@@ -106,12 +114,12 @@ run_command "cd code/LRWE/src && make clean && make" \
             "Errore durante l'esecuzione di make clean e make." \
             "Esecuzione di make clean e make completata con successo"
 
-run_command "cd ../../.."
-
+# Torna alla directory principale
+cd /app/Log2Vec
 
 ### pipeline.py ###
 print_status "Esecuzione del file pipeline.py ..." "🔄"
-run_command "python pipeline.py -i /logs/$BASE_NAME.log -t $BASE_NAME -o /logs/results/ -n 50" \
+run_command "python pipeline.py -i /logs/$BASE_NAME.log -t $BASE_NAME -o /logs/results/ -n $NUMBER_ITERATION" \
             "Errore durante l'esecuzione di pipeline.py." \
             "Esecuzione di pipeline.py completata correttamente"
 
@@ -122,4 +130,12 @@ run_command "python plot_cdf.py /logs/results/all_scores.txt /logs/results/cdf_p
 
 print_success "Processo completato con successo."
 
-run_command "python email_send.py -t $BASE_NAME -d $DURATION"
+# Calcola il tempo totale
+end_time=$(date +%s)
+total_duration=$(( end_time - start_time ))
+
+# Invia l'email con il tempo di esecuzione
+print_status "Invio dell'email ..." "🔄"
+run_command "python email_send.py -t $BASE_NAME -d $total_duration -n $NUMBER_ITERATION" \
+            "Errore durante l'inoltro della mail." \
+            "E-mail inviata correttamente"
