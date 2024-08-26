@@ -34,7 +34,9 @@ print_success() {
 # Funzione per stampare messaggi di errore
 print_error() {
     echo -e "${RED}${BOLD}❌  $1${RESET}\n" | tee -a "$LOG_FILE"
+    run_command "python3 email_send.py -e"
 }
+
 
 # Funzione per stampare messaggi di progresso
 print_info() {
