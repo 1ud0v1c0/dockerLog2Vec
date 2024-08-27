@@ -23,11 +23,6 @@ print_status() {
 # File di log
 LOG_FILE="/logs/process_log2vec.log"
 
-# Elimina tutto dalla cartella logs tranne i file .log
-print_info "Eliminazione di file e directory non di log in /logs..."
-find /logs -type f ! -name "*.log" -exec rm -f {} + || { print_error "Impossibile eliminare i file non di log."; exit 1; }
-find /logs -type d ! -name logs -exec rm -rf {} + || { print_error "Impossibile eliminare le directory."; exit 1; }
-
 # Numero di iterazioni (può essere cambiato a seconda delle necessità)
 NUMBER_ITERATION=1
 
@@ -88,6 +83,11 @@ fi
 echo "Inizio processo: $(date)" > "$LOG_FILE"
 
 start_time=$(date +%s)
+
+# Elimina tutto dalla cartella logs tranne i file .log
+print_info "Eliminazione di file e directory non di log in /logs..."
+find /logs -type f ! -name "*.log" -exec rm -f {} + || { print_error "Impossibile eliminare i file non di log."; exit 1; }
+find /logs -type d ! -name logs -exec rm -rf {} + || { print_error "Impossibile eliminare le directory."; exit 1; }
 
 # Verifica se la cartella di Log2Vec esiste
 print_info "Controllo dell'esistenza della cartella Log2Vec..."
