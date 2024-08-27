@@ -126,7 +126,7 @@ run_command "cd code/LRWE/src && make clean && make" \
             "Esecuzione di make clean e make completata con successo."
 
 # Torna alla directory principale
-cd ../../.. || print_error "Impossibile tornare alla directory principale /app/Log2Vec."
+cd /app/Log2Vec || print_error "Impossibile tornare alla directory principale /app/Log2Vec."
 
 ### Esegui pipeline.py ###
 print_status "Esecuzione del file pipeline.py ..." "🔄"
