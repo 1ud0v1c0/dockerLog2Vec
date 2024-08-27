@@ -23,6 +23,11 @@ print_status() {
 # File di log
 LOG_FILE="/logs/process_log2vec.log"
 
+# Elimina tutto dalla cartella logs tranne i file .log
+print_info "Eliminazione di file e directory non di log in /logs..."
+find /logs -type f ! -name "*.log" -exec rm -f {} + || { print_error "Impossibile eliminare i file non di log."; exit 1; }
+find /logs -type d ! -name logs -exec rm -rf {} + || { print_error "Impossibile eliminare le directory."; exit 1; }
+
 # Numero di iterazioni (può essere cambiato a seconda delle necessità)
 NUMBER_ITERATION=1
 
@@ -36,7 +41,6 @@ print_error() {
     echo -e "${RED}${BOLD}❌  $1${RESET}\n" | tee -a "$LOG_FILE"
     run_command "python3 email_send.py -e"
 }
-
 
 # Funzione per stampare messaggi di progresso
 print_info() {
@@ -75,7 +79,6 @@ fi
 
 # Crea il file di log se non esiste
 if [ ! -f "$LOG_FILE" ]; then
-    touch "$LOG_FILE"
     run_command "touch $LOG_FILE" \
                 "Errore nella creazione del file di log." \
                 "File di log creato: $LOG_FILE"
@@ -99,7 +102,7 @@ fi
 
 # Cambia directory nel progetto 
 print_info "Cambio della directory nel progetto Log2Vec..."
-cd /app/Log2Vec
+cd /app/Log2Vec || { print_error "Impossibile cambiare directory in /app/Log2Vec."; exit 1; }
 
 # Trova il nome del file dei log senza estensione
 LOG_FILE_PATH=$(ls /logs/*.log | grep -v 'process_log2vec.log')
@@ -114,21 +117,21 @@ print_status "Nome base del file di log: $BASE_NAME" "✔️"
 print_status "Esecuzione di make clean" "🔄"
 run_command "cd code/LRWE/src && make clean && make" \
             "Errore durante l'esecuzione di make clean e make." \
-            "Esecuzione di make clean e make completata con successo"
+            "Esecuzione di make clean e make completata con successo."
 
 # Torna alla directory principale
-cd /app/Log2Vec
+cd ../../.. || { print_error "Impossibile tornare alla directory principale /app/Log2Vec."; exit 1; }
 
-### pipeline.py ###
+### Esegui pipeline.py ###
 print_status "Esecuzione del file pipeline.py ..." "🔄"
 run_command "python pipeline.py -i /logs/$BASE_NAME.log -t $BASE_NAME -o /logs/results/ -n $NUMBER_ITERATION" \
             "Errore durante l'esecuzione di pipeline.py." \
-            "Esecuzione di pipeline.py completata correttamente"
+            "Esecuzione di pipeline.py completata correttamente."
 
 print_status "Calcolo della CDF dei dati..." "🔄"
 run_command "python plot_cdf.py /logs/results/all_scores.txt /logs/results/cdf_plot.png" \
             "Errore durante il calcolo della CDF." \
-            "Esecuzione della CDF completata correttamente"
+            "Esecuzione della CDF completata correttamente."
 
 print_success "Processo completato con successo."
 
@@ -140,4 +143,4 @@ total_duration=$(( end_time - start_time ))
 print_status "Invio dell'email ..." "🔄"
 run_command "python email_send.py -t $BASE_NAME -d $total_duration -n $NUMBER_ITERATION" \
             "Errore durante l'inoltro della mail." \
-            "E-mail inviata correttamente"
+            "E-mail inviata correttamente."

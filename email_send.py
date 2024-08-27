@@ -29,7 +29,7 @@ def zip_folder(folder_path, output_path):
 
 def send_error_notification(smtp_server, smtp_port, sender_email, receiver_email, attachment_path):
     """ Invia una notifica di errore con un file di log allegato """
-    subject = "Errore nel processo di script"
+    subject = "ERROR TO PROCESS LOG2VEC"
     body = "Si è verificato un errore durante l'esecuzione dello script. Vedi l'allegato per i dettagli."
     
     msg = MIMEMultipart()
