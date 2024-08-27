@@ -67,44 +67,57 @@ def seconds_to_hms(seconds):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('-t', help='log type')  # Argomento obbligatorio per il tipo di log
-    parser.add_argument('-d', help='duration in seconds', type=int)  # Argomento obbligatorio per la durata
-    parser.add_argument('-n', help='number of iterations', type=int)  # Argomento obbligatorio per le iterazioni
-    parser.add_argument('-e', help='send error notification', action='store_true')  # Flag per inviare notifica di errore
+    parser.add_argument('-t', help='Tipo di log')  # Tipo di log (opzionale)
+    parser.add_argument('-d', help='Durata in secondi', type=int)  # Durata in secondi (obbligatoria se -t è specificato)
+    parser.add_argument('-n', help='Numero di iterazioni', type=int)  # Numero di iterazioni (obbligatorio se -t è specificato)
+    parser.add_argument('-e', help='Invia notifica di errore', action='store_true')  # Flag per inviare notifica di errore
     args = parser.parse_args()
+
+    # Dettagli email
+    smtp_server = 'mail.rm.ingv.it'
+    smtp_port = 587
+    sender_email = 'log2vec@ingv.it'
+    receiver_email = 'ludovico.vitiello@ingv.it'
 
     # Percorsi e dettagli dell'email
     folder_to_zip = '/logs'
-    zip_file_path = f'./results_{args.t}.zip'
-
-    # Assicurati che la directory di destinazione esista
-    ensure_dir_exists(os.path.dirname(zip_file_path))
+    zip_file_path = f'./results_{args.t if args.t else "error"}.zip'
 
     try:
+        # Assicurati che la directory di destinazione esista
+        ensure_dir_exists(os.path.dirname(zip_file_path))
+        
         # Zippa la cartella
         zip_folder(folder_to_zip, zip_file_path)
-
-        # Converti la durata da secondi a ore, minuti e secondi
-        hours, minutes, seconds = seconds_to_hms(args.d)
-
-        # Dettagli email
-        smtp_server = 'mail.rm.ingv.it'
-        smtp_port = 587
-        sender_email = 'log2vec@ingv.it'
-        receiver_email = 'ludovico.vitiello@ingv.it'
-        subject = 'FINISH TO PROCESS LOG2VEC'
-        body = (f'In allegato i risultati del processo del dataset: {args.t}\n'
-                f'Iterazioni totali eseguite: {args.n}\n'
-                f'Durata totale: {hours} ore, {minutes} minuti e {seconds} secondi\n')
-
-        # Invia l'email di successo
-        send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, zip_file_path)
-
-    except Exception as e:
-        # In caso di errore, invia la notifica di errore se il flag -e è presente
-        print(f"Errore durante l'esecuzione del processo: {e}")
+        
         if args.e:
-            send_email(smtp_server, smtp_port, sender_email, receiver_email, 
-                       "ERROR TO PROCESS LOG2VEC",
-                       "Si è verificato un errore durante l'esecuzione dello script. Vedi l'allegato per i dettagli.",
-                       '/logs/process_log2vec.log')
+            # Dettagli email in caso di errore
+            subject = 'ERROR TO PROCESS LOG2VEC'
+            body = "Si è verificato un errore durante l'esecuzione del processo. Vedi l'allegato per i dettagli."
+
+            # Invia l'email di errore
+            send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, zip_file_path)
+        else:
+            if args.d and args.n:
+                # Converti la durata da secondi a ore, minuti e secondi
+                hours, minutes, seconds = seconds_to_hms(args.d)
+
+                # Dettagli email per successo
+                subject = 'FINISH TO PROCESS LOG2VEC'
+                body = (f'In allegato i risultati del processo del dataset: {args.t}\n'
+                        f'Iterazioni totali eseguite: {args.n}\n'
+                        f'Durata totale: {hours} ore, {minutes} minuti e {seconds} secondi\n')
+
+                # Invia l'email di successo
+                send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, zip_file_path)
+            else:
+                print("Errore: è necessario specificare -d e -n se non si usa -e.")
+                
+    except Exception as e:
+        # In caso di errore durante la creazione del file zip o invio dell'email
+        print(f"Errore durante l'esecuzione del processo: {e}")
+        if not args.e:
+            # Solo se non è stato passato -e, invia una notifica di errore
+            subject = 'ERROR DURING PROCESS EXECUTION'
+            body = "Si è verificato un errore durante l'esecuzione del processo. Controlla il log per ulteriori dettagli."
+            send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, zip_file_path)

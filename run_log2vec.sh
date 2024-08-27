@@ -26,6 +26,9 @@ LOG_FILE="/logs/process_log2vec.log"
 # Numero di iterazioni (può essere cambiato a seconda delle necessità)
 NUMBER_ITERATION=1
 
+# Variabile per inviare email di errore
+SEND_ERROR_EMAIL=true
+
 # Funzione per stampare messaggi di successo
 print_success() {
     echo -e "${GREEN}${BOLD}✔️  $1${RESET}\n" | tee -a "$LOG_FILE"
@@ -35,7 +38,7 @@ print_success() {
 print_error() {
     echo -e "${RED}${BOLD}❌  $1${RESET}\n" | tee -a "$LOG_FILE"
     if [ "$SEND_ERROR_EMAIL" = true ]; then
-        echo "Esecuzione: python3 email_send.py -e" | tee -a "$LOG_FILE"
+        echo "Invio email di errore..."
         python3 email_send.py -e || echo "Errore durante l'invio dell'email di errore." | tee -a "$LOG_FILE"
     fi
     exit 1
@@ -91,7 +94,7 @@ start_time=$(date +%s)
 # Elimina tutto dalla cartella logs tranne i file .log
 print_info "Eliminazione di file e directory non di log in /logs..."
 find /logs -type f ! -name "*.log" -exec rm -f {} + || { print_error "Impossibile eliminare i file non di log."; }
-find /logs -type d ! -name logs -exec rm -rf {} + || { print_error "Impossibile eliminare le directory."; }
+find /logs -type d ! -name "logs" -exec rm -rf {} + || { print_error "Impossibile eliminare le directory."; }
 
 # Verifica se la cartella di Log2Vec esiste
 print_info "Controllo dell'esistenza della cartella Log2Vec..."
@@ -109,9 +112,9 @@ print_info "Cambio della directory nel progetto Log2Vec..."
 cd /app/Log2Vec || print_error "Impossibile cambiare directory in /app/Log2Vec."
 
 # Trova il nome del file dei log senza estensione
-LOG_FILE_PATH=$(ls /logs/*.log | grep -v 'process_log2vec.log')
-if [ $? -ne 0 ]; then
-    print_error "Errore nella ricerca del file di log."
+LOG_FILE_PATH=$(ls /logs/*.log 2>/dev/null | grep -v 'process_log2vec.log')
+if [ -z "$LOG_FILE_PATH" ]; then
+    print_error "Nessun file di log trovato."
 fi
 BASE_NAME=$(basename "$LOG_FILE_PATH" .log)
 
