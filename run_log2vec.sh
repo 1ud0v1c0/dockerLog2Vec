@@ -130,7 +130,7 @@ cd /app/Log2Vec || print_error "Impossibile tornare alla directory principale /a
 
 ### Esegui pipeline.py ###
 print_status "Esecuzione del file pipeline.py ..." "🔄"
-run_command "python pipeline.py -i /logs/$BASE_NAME.log -t $BASE_NAME -o /logs/results/ -n $NUMBER_ITERATION" \
+run_command "python pipeline.py -i /logs/$BASE_NAME.log -t $BASE_NAME -o /logs/results -n $NUMBER_ITERATION" \
             "Errore durante l'esecuzione di pipeline.py." \
             "Esecuzione di pipeline.py completata correttamente."
 
