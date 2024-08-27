@@ -104,6 +104,11 @@ if __name__ == "__main__":
     parser.add_argument('-e', help='send error notification', action='store_true')  # Flag per inviare notifica di errore
     args = parser.parse_args()
 
+    # Verifica che gli argomenti obbligatori siano presenti
+    if not args.t or not args.d or not args.n:
+        print("Gli argomenti -t, -d e -n sono obbligatori.")
+        exit(1)
+
     # Percorsi e dettagli dell'email
     folder_to_zip = '/logs'
     zip_file_path = f'./results_{args.t}.zip'

@@ -31,10 +31,15 @@ print_success() {
     echo -e "${GREEN}${BOLD}✔️  $1${RESET}\n" | tee -a "$LOG_FILE"
 }
 
-# Funzione per stampare messaggi di errore
+# Funzione per stampare messaggi di errore senza inviare email per evitare loop infinito
 print_error() {
     echo -e "${RED}${BOLD}❌  $1${RESET}\n" | tee -a "$LOG_FILE"
-    run_command "python3 email_send.py -e"
+    exit 1
+}
+
+# Funzione per inviare email in caso di errore, chiamata fuori da `print_error`
+send_email_error() {
+    run_command "python3 email_send.py -e" "Errore nell'invio dell'email di errore."
 }
 
 # Funzione per stampare messaggi di progresso
@@ -53,7 +58,7 @@ run_command() {
     
     if [ ${PIPESTATUS[0]} -ne 0 ]; then
         print_error "$error_msg"
-        exit 1
+        send_email_error
     fi
     print_success "$success_msg"
 }
