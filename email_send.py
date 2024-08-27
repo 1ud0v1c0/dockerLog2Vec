@@ -98,9 +98,9 @@ def seconds_to_hms(seconds):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('-t', help='log type', required=True)  # Argomento obbligatorio per il tipo di log
-    parser.add_argument('-d', help='duration in seconds', type=int, required=True)  # Argomento obbligatorio per la durata
-    parser.add_argument('-n', help='number of iterations', type=int, required=True)  # Argomento obbligatorio per le iterazioni
+    parser.add_argument('-t', help='log type')  # Argomento obbligatorio per il tipo di log
+    parser.add_argument('-d', help='duration in seconds', type=int)  # Argomento obbligatorio per la durata
+    parser.add_argument('-n', help='number of iterations', type=int)  # Argomento obbligatorio per le iterazioni
     parser.add_argument('-e', help='send error notification', action='store_true')  # Flag per inviare notifica di errore
     args = parser.parse_args()
 
