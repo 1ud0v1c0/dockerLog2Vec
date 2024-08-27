@@ -27,11 +27,8 @@ def zip_folder(folder_path, output_path):
         print(f"Errore durante la creazione del file zip: {e}")
         raise
 
-def send_error_notification(smtp_server, smtp_port, sender_email, receiver_email, attachment_path):
-    """ Invia una notifica di errore con un file di log allegato """
-    subject = "ERROR TO PROCESS LOG2VEC"
-    body = "Si è verificato un errore durante l'esecuzione dello script. Vedi l'allegato per i dettagli."
-    
+def send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, attachment_path=None):
+    """ Invia un'email con un file allegato opzionale """
     msg = MIMEMultipart()
     msg['From'] = sender_email
     msg['To'] = receiver_email
@@ -41,9 +38,9 @@ def send_error_notification(smtp_server, smtp_port, sender_email, receiver_email
 
     if attachment_path and os.path.isfile(attachment_path):
         try:
-            with open(attachment_path, 'rb') as attachment:
+            with open(attachment_path, 'rb') as file:
                 part = MIMEBase('application', 'octet-stream')
-                part.set_payload(attachment.read())
+                part.set_payload(file.read())
                 encoders.encode_base64(part)
                 part.add_header(
                     'Content-Disposition',
@@ -57,37 +54,9 @@ def send_error_notification(smtp_server, smtp_port, sender_email, receiver_email
         with smtplib.SMTP(smtp_server, smtp_port) as server:
             server.starttls()
             server.send_message(msg)
-            print("Email di errore inviata correttamente")
+            print("Email inviata correttamente")
     except Exception as e:
         print(f"Errore nell'invio dell'email: {e}")
-
-def send_success_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, attachment_path):
-    """ Invia un'email con un file zippato allegato """
-    try:
-        msg = MIMEMultipart()
-        msg['From'] = sender_email
-        msg['To'] = receiver_email
-        msg['Subject'] = subject
-
-        msg.attach(MIMEText(body, 'plain'))
-
-        if attachment_path and os.path.isfile(attachment_path):
-            try:
-                with open(attachment_path, 'rb') as file:
-                    part = MIMEBase('application', 'octet-stream')
-                    part.set_payload(file.read())
-                    encoders.encode_base64(part)
-                    part.add_header('Content-Disposition', f'attachment; filename={os.path.basename(attachment_path)}')
-                    msg.attach(part)
-            except Exception as e:
-                print(f"Errore nell'aprire l'allegato: {e}")
-
-        with smtplib.SMTP(smtp_server, smtp_port) as server:
-            server.starttls()
-            server.send_message(msg)
-            print("Email di successo inviata correttamente")
-    except Exception as e:
-        print(f"Errore durante l'invio dell'email: {e}")
 
 def seconds_to_hms(seconds):
     """ Converte i secondi in ore, minuti e secondi """
@@ -103,11 +72,6 @@ if __name__ == "__main__":
     parser.add_argument('-n', help='number of iterations', type=int)  # Argomento obbligatorio per le iterazioni
     parser.add_argument('-e', help='send error notification', action='store_true')  # Flag per inviare notifica di errore
     args = parser.parse_args()
-
-    # Verifica che gli argomenti obbligatori siano presenti
-    if not args.t or not args.d or not args.n:
-        print("Gli argomenti -t, -d e -n sono obbligatori.")
-        exit(1)
 
     # Percorsi e dettagli dell'email
     folder_to_zip = '/logs'
@@ -134,10 +98,13 @@ if __name__ == "__main__":
                 f'Durata totale: {hours} ore, {minutes} minuti e {seconds} secondi\n')
 
         # Invia l'email di successo
-        send_success_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, zip_file_path)
+        send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, zip_file_path)
 
     except Exception as e:
-        # In caso di errore, invia la notifica di errore
+        # In caso di errore, invia la notifica di errore se il flag -e è presente
         print(f"Errore durante l'esecuzione del processo: {e}")
         if args.e:
-            send_error_notification(smtp_server, smtp_port, sender_email, receiver_email, '/logs/process_log2vec.log')
+            send_email(smtp_server, smtp_port, sender_email, receiver_email, 
+                       "ERROR TO PROCESS LOG2VEC",
+                       "Si è verificato un errore durante l'esecuzione dello script. Vedi l'allegato per i dettagli.",
+                       '/logs/process_log2vec.log')

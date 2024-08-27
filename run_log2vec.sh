@@ -31,15 +31,14 @@ print_success() {
     echo -e "${GREEN}${BOLD}✔️  $1${RESET}\n" | tee -a "$LOG_FILE"
 }
 
-# Funzione per stampare messaggi di errore senza inviare email per evitare loop infinito
+# Funzione per stampare messaggi di errore e inviare email
 print_error() {
     echo -e "${RED}${BOLD}❌  $1${RESET}\n" | tee -a "$LOG_FILE"
+    if [ "$SEND_ERROR_EMAIL" = true ]; then
+        echo "Esecuzione: python3 email_send.py -e" | tee -a "$LOG_FILE"
+        python3 email_send.py -e || echo "Errore durante l'invio dell'email di errore." | tee -a "$LOG_FILE"
+    fi
     exit 1
-}
-
-# Funzione per inviare email in caso di errore, chiamata fuori da `print_error`
-send_email_error() {
-    run_command "python3 email_send.py -e" "Errore nell'invio dell'email di errore."
 }
 
 # Funzione per stampare messaggi di progresso
@@ -58,9 +57,9 @@ run_command() {
     
     if [ ${PIPESTATUS[0]} -ne 0 ]; then
         print_error "$error_msg"
-        send_email_error
+    else
+        print_success "$success_msg"
     fi
-    print_success "$success_msg"
 }
 
 # Funzione per la gestione dei segnali di interruzione
@@ -91,8 +90,8 @@ start_time=$(date +%s)
 
 # Elimina tutto dalla cartella logs tranne i file .log
 print_info "Eliminazione di file e directory non di log in /logs..."
-find /logs -type f ! -name "*.log" -exec rm -f {} + || { print_error "Impossibile eliminare i file non di log."; exit 1; }
-find /logs -type d ! -name logs -exec rm -rf {} + || { print_error "Impossibile eliminare le directory."; exit 1; }
+find /logs -type f ! -name "*.log" -exec rm -f {} + || { print_error "Impossibile eliminare i file non di log."; }
+find /logs -type d ! -name logs -exec rm -rf {} + || { print_error "Impossibile eliminare le directory."; }
 
 # Verifica se la cartella di Log2Vec esiste
 print_info "Controllo dell'esistenza della cartella Log2Vec..."
@@ -107,13 +106,12 @@ fi
 
 # Cambia directory nel progetto 
 print_info "Cambio della directory nel progetto Log2Vec..."
-cd /app/Log2Vec || { print_error "Impossibile cambiare directory in /app/Log2Vec."; exit 1; }
+cd /app/Log2Vec || print_error "Impossibile cambiare directory in /app/Log2Vec."
 
 # Trova il nome del file dei log senza estensione
 LOG_FILE_PATH=$(ls /logs/*.log | grep -v 'process_log2vec.log')
 if [ $? -ne 0 ]; then
     print_error "Errore nella ricerca del file di log."
-    exit 1
 fi
 BASE_NAME=$(basename "$LOG_FILE_PATH" .log)
 
@@ -125,7 +123,7 @@ run_command "cd code/LRWE/src && make clean && make" \
             "Esecuzione di make clean e make completata con successo."
 
 # Torna alla directory principale
-cd ../../.. || { print_error "Impossibile tornare alla directory principale /app/Log2Vec."; exit 1; }
+cd ../../.. || print_error "Impossibile tornare alla directory principale /app/Log2Vec."
 
 ### Esegui pipeline.py ###
 print_status "Esecuzione del file pipeline.py ..." "🔄"
