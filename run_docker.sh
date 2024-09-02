@@ -26,6 +26,10 @@ CONTAINER_TIMEOUT=600  # 10 minuti
 # Intervallo tra i controlli dello stato dei container (in secondi)
 CHECK_INTERVAL=60
 
+# Crea la directory per i log dei container se non esiste
+mkdir -p "$CONTAINER_LOG_DIR"
+echo "La directory per i log dei container $CONTAINER_LOG_DIR è stata creata." | tee -a "$SCRIPT_LOG_FILE"
+
 # Elimino le directory vecchie e lascio process_log
 echo "Rimozioni della cache"
 find $HOST_LOG_DIR -mindepth 1 -maxdepth 1 ! -name 'process_log' -print -exec rm -rf {} + >> "$SCRIPT_LOG_FILE" 2>&1
@@ -43,10 +47,6 @@ if [ ! -f "$HOST_LOG_DIR/process_log/$LOG_FILE" ]; then
   echo "Il file di log $HOST_LOG_DIR/process_log/$LOG_FILE non esiste." | tee -a "$SCRIPT_LOG_FILE"
   exit 1
 fi
-
-# Crea la directory per i log dei container se non esiste
-mkdir -p "$CONTAINER_LOG_DIR"
-echo "La directory per i log dei container $CONTAINER_LOG_DIR è stata creata." | tee -a "$SCRIPT_LOG_FILE"
 
 # Calcola il tempo di inizio
 START_TIME=$(date +%s)
@@ -82,7 +82,7 @@ for ((batch_start=0; batch_start<TOTAL_CONTAINERS; batch_start+=BATCH_SIZE)); do
   echo "Avvio del batch di container ${batch_start} fino a $((batch_start + BATCH_SIZE - 1)) per $LOG_FILE." | tee -a "$SCRIPT_LOG_FILE"
 
   # Avvia il batch di container
-  for ((i=batch_start; i<batch_start + BATCH_SIZE  && i<TOTAL_CONTAINERS; i++)); do
+  for ((i=batch_start; i<batch_start + BATCH_SIZE && i<TOTAL_CONTAINERS; i++)); do
     # Nome del container con un suffisso numerico
     CONTAINER_NAME="${BASE_NAME}_$(basename "$LOG_FILE" .log)_$((i+1))"
 
