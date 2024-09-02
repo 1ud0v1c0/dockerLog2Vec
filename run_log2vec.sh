@@ -1,152 +1,44 @@
 #!/bin/bash
 
-set -e
+# Nome del file di log
+LOG_FILE_PATH="/logs/container_log/$CONTAINER_NAME.log"
 
-# Definisci i colori
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-BLUE='\033[0;34m'
-MAGENTA='\033[0;35m'
-CYAN='\033[0;36m'
-WHITE='\033[0;37m'
-BOLD='\033[1m'
-RESET='\033[0m'
-
-# Funzione per stampare messaggi di stato colorati con separatori e icone
-print_status() {
-    echo -e "${BLUE}${BOLD}--------------------------------------------------${RESET}"
-    echo -e "${CYAN}${BOLD}$2${RESET} $1"
-    echo -e "${BLUE}${BOLD}--------------------------------------------------${RESET}"
-}
-
-# File di log
-LOG_FILE="/logs/process_log2vec.log"
-
-# Numero di iterazioni (può essere cambiato a seconda delle necessità)
-NUMBER_ITERATION=1
-
-# Variabile per inviare email di errore
-SEND_ERROR_EMAIL=true
-
-# Funzione per stampare messaggi di successo
-print_success() {
-    echo -e "${GREEN}${BOLD}✔️  $1${RESET}\n" | tee -a "$LOG_FILE"
-}
-
-# Funzione per stampare messaggi di errore e inviare email
-print_error() {
-    echo -e "${RED}${BOLD}❌  $1${RESET}\n" | tee -a "$LOG_FILE"
-    if [ "$SEND_ERROR_EMAIL" = true ]; then
-        echo "Invio email di errore..."
-        python3 email_send.py -e || echo "Errore durante l'invio dell'email di errore." | tee -a "$LOG_FILE"
-    fi
-    exit 1
-}
-
-# Funzione per stampare messaggi di progresso
-print_info() {
-    echo -e "${YELLOW}${BOLD}🔄  $1${RESET}\n" | tee -a "$LOG_FILE"
-}
-
-# Funzione per eseguire un comando e verificare il risultato
-run_command() {
-    local command="$1"
-    local error_msg="$2"
-    local success_msg="$3"
-    
-    echo "Esecuzione: $command" | tee -a "$LOG_FILE"
-    eval "$command" 2>&1 | tee -a "$LOG_FILE"
-    
-    if [ ${PIPESTATUS[0]} -ne 0 ]; then
-        print_error "$error_msg"
-    else
-        print_success "$success_msg"
-    fi
-}
-
-# Funzione per la gestione dei segnali di interruzione
-trap 'print_error "Processo interrotto inaspettatamente."; exit 1' INT TERM
-
-print_status "La directory corrente è: $(pwd)"
-
-# Assicurati che la directory di log esista
-LOG_DIR=$(dirname "$LOG_FILE")
-if [ ! -d "$LOG_DIR" ]; then
-    print_info "La directory di log non esiste, la creo ora..."
-    run_command "mkdir -p $LOG_DIR" \
-                "Errore nella creazione della directory di log." \
-                "Directory di log creata: $LOG_DIR"
+# Verifica se la variabile d'ambiente LOG_FILE è impostata
+if [ -z "$LOG_FILE" ]; then
+  echo "Errore: La variabile d'ambiente LOG_FILE non è impostata." | tee -a "$LOG_FILE_PATH"
+  exit 1
 fi
 
-# Crea il file di log se non esiste
-if [ ! -f "$LOG_FILE" ]; then
-    run_command "touch $LOG_FILE" \
-                "Errore nella creazione del file di log." \
-                "File di log creato: $LOG_FILE"
+# Naviga nella directory del progetto
+cd /Log2Vec || { echo "Errore: Impossibile accedere alla directory /Log2Vec." | tee -a "$LOG_FILE_PATH"; exit 1; }
+
+# Naviga nella directory del codice
+cd code/LRWE/src || { echo "Errore: Impossibile accedere alla directory code/LRWE/src." | tee -a "$LOG_FILE_PATH"; exit 1; }
+
+# Pulisci la compilazione precedente
+make clean
+if [ $? -ne 0 ]; then
+  echo "Errore durante la pulizia del progetto." | tee -a "$LOG_FILE_PATH"
+  exit 1
 fi
 
-# Inizia il log
-echo "Inizio processo: $(date)" > "$LOG_FILE"
+# Compila il codice
+make
+if [ $? -ne 0 ]; then
+  echo "Errore durante la compilazione del progetto." | tee -a "$LOG_FILE_PATH"
+  exit 1
+fi
 
-start_time=$(date +%s)
+# Torna alla directory principale del progetto
+cd ../../..
 
-# Elimina tutto dalla cartella logs tranne i file .log
-print_info "Eliminazione di file e directory non di log in /logs..."
-find /logs -type f ! -name "*.log" -exec rm -f {} + || { print_error "Impossibile eliminare i file non di log."; }
-find /logs -type d ! -name "logs" -exec rm -rf {} + || { print_error "Impossibile eliminare le directory."; }
+# Esegui il pipeline.py con il file di log specificato
+python pipeline.py -i /logs/process_log/$LOG_FILE -t $BASE_NAME -o /logs/results | tee -a "$LOG_FILE_PATH"
 
-# Verifica se la cartella di Log2Vec esiste
-print_info "Controllo dell'esistenza della cartella Log2Vec..."
-if [ ! -d "/app/Log2Vec" ]; then
-    print_info "Clonazione del repository Log2Vec..."
-    run_command "git clone https://github.com/NetManAIOps/Log2Vec.git /app/Log2Vec" \
-                "Errore nella clonazione del repository." \
-                "Il repository Log2Vec è stato clonato con successo."
+# Verifica il successo dell'esecuzione del comando python
+if [ $? -eq 0 ]; then
+  echo "Processamento completato con successo per il file di log $LOG_FILE." | tee -a "$LOG_FILE_PATH"
 else
-    print_info "Il repository Log2Vec è già stato clonato."
+  echo "Errore durante il processamento del file di log $LOG_FILE." | tee -a "$LOG_FILE_PATH"
+  exit 1
 fi
-
-# Cambia directory nel progetto 
-print_info "Cambio della directory nel progetto Log2Vec..."
-cd /app/Log2Vec || print_error "Impossibile cambiare directory in /app/Log2Vec."
-
-# Trova il nome del file dei log senza estensione
-LOG_FILE_PATH=$(ls /logs/*.log 2>/dev/null | grep -v 'process_log2vec.log')
-if [ -z "$LOG_FILE_PATH" ]; then
-    print_error "Nessun file di log trovato."
-fi
-BASE_NAME=$(basename "$LOG_FILE_PATH" .log)
-
-print_status "Nome base del file di log: $BASE_NAME" "✔️"
-
-print_status "Esecuzione di make clean" "🔄"
-run_command "cd code/LRWE/src && make clean && make" \
-            "Errore durante l'esecuzione di make clean e make." \
-            "Esecuzione di make clean e make completata con successo."
-
-# Torna alla directory principale
-cd /app/Log2Vec || print_error "Impossibile tornare alla directory principale /app/Log2Vec."
-
-### Esegui pipeline.py ###
-print_status "Esecuzione del file pipeline.py ..." "🔄"
-run_command "python pipeline.py -i /logs/$BASE_NAME.log -t $BASE_NAME -o /logs/results -n $NUMBER_ITERATION" \
-            "Errore durante l'esecuzione di pipeline.py." \
-            "Esecuzione di pipeline.py completata correttamente."
-
-print_status "Calcolo della CDF dei dati..." "🔄"
-run_command "python plot_cdf.py /logs/results/all_scores.txt /logs/results/cdf_plot.png" \
-            "Errore durante il calcolo della CDF." \
-            "Esecuzione della CDF completata correttamente."
-
-print_success "Processo completato con successo."
-
-# Calcola il tempo totale
-end_time=$(date +%s)
-total_duration=$(( end_time - start_time ))
-
-# Invia l'email con il tempo di esecuzione
-print_status "Invio dell'email ..." "🔄"
-run_command "python email_send.py -t $BASE_NAME -d $total_duration -n $NUMBER_ITERATION" \
-            "Errore durante l'inoltro della mail." \
-            "E-mail inviata correttamente."

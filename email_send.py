@@ -13,16 +13,40 @@ def ensure_dir_exists(directory):
         os.makedirs(directory)
 
 def zip_folder(folder_path, output_path):
-    """ Zippa la cartella specificata e salva il file zip all'output_path """
+    """ Zippa solo i file specificati e la cartella 'container_log', se presenti """
     if not os.path.exists(folder_path):
         raise FileNotFoundError(f"La cartella {folder_path} non esiste.")
 
+    # Definisce i percorsi dei file e della cartella che vogliamo zippare
+    files_to_include = [
+        os.path.join(folder_path, 'results', 'all_scores.txt'),
+        os.path.join(folder_path, 'results', 'cdf_plot.png')
+    ]
+    dir_to_include = os.path.join(folder_path, 'container_log')
+
     try:
         with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
-            for root, dirs, files in os.walk(folder_path):
-                for file in files:
-                    file_path = os.path.join(root, file)
+            # Flag per controllare se almeno un file è stato aggiunto
+            files_added = False
+
+            # Aggiungi i file specifici se esistono
+            for file_path in files_to_include:
+                if os.path.isfile(file_path):
                     zipf.write(file_path, os.path.relpath(file_path, folder_path))
+                    files_added = True
+
+            # Aggiungi la cartella specifica se esiste
+            if os.path.isdir(dir_to_include):
+                for root, _, files in os.walk(dir_to_include):
+                    for file in files:
+                        file_path = os.path.join(root, file)
+                        zipf.write(file_path, os.path.relpath(file_path, folder_path))
+                files_added = True
+
+            # Se nessun file o cartella è stato aggiunto, solleva un'eccezione
+            if not files_added:
+                raise FileNotFoundError("Nessun file o cartella specificato è stato trovato per la compressione.")
+
     except Exception as e:
         print(f"Errore durante la creazione del file zip: {e}")
         raise
@@ -71,6 +95,7 @@ if __name__ == "__main__":
     parser.add_argument('-d', help='Durata in secondi', type=int)  # Durata in secondi (obbligatoria se -t è specificato)
     parser.add_argument('-n', help='Numero di iterazioni', type=int)  # Numero di iterazioni (obbligatorio se -t è specificato)
     parser.add_argument('-e', help='Invia notifica di errore', action='store_true')  # Flag per inviare notifica di errore
+    parser.add_argument('-f', help='Percorso della cartella da zippare', default='./logs')  # Nuovo argomento per il percorso della cartella
     args = parser.parse_args()
 
     # Dettagli email
@@ -80,8 +105,8 @@ if __name__ == "__main__":
     receiver_email = 'ludovico.vitiello@ingv.it'
 
     # Percorsi e dettagli dell'email
-    folder_to_zip = '/logs'
-    zip_file_path = f'./results_{args.t if args.t else "error"}.zip'
+    folder_to_zip = args.f
+    zip_file_path = f'{folder_to_zip}/results_{args.t if args.t else "error"}.zip'
 
     try:
         # Assicurati che la directory di destinazione esista

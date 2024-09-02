@@ -35,13 +35,11 @@ RUN python -m spacy download en_core_web_md
 WORKDIR /app
 
 # Clona il repository Git
-RUN git clone https://github.com/NetManAIOps/Log2Vec.git ./Log2Vec
+RUN git clone https://github.com/NetManAIOps/Log2Vec.git /Log2Vec
 
 # Copia lo script bash nel contenitore
 COPY run_log2vec.sh /app/
-COPY pipeline.py /app/Log2Vec
-COPY plot_cdf.py /app/Log2Vec
-COPY email_send.py /app/Log2Vec
+
 
 # Esegui lo script bash come entrypoint
 ENTRYPOINT ["/app/run_log2vec.sh"]
