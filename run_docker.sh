@@ -26,14 +26,6 @@ CONTAINER_TIMEOUT=600  # 10 minuti
 # Intervallo tra i controlli dello stato dei container (in secondi)
 CHECK_INTERVAL=60
 
-# Elimino le directory vecchie e lascio process_log
-echo "Rimozioni della cache"
-find $HOST_LOG_DIR -mindepth 1 -maxdepth 1 ! -name 'process_log' -print -exec rm -rf {} + >> "$SCRIPT_LOG_FILE" 2>&1
-
-# Crea la directory per i log dei container se non esiste
-mkdir -p "$CONTAINER_LOG_DIR"
-echo "La directory per i log dei container $CONTAINER_LOG_DIR è stata creata." | tee -a "$SCRIPT_LOG_FILE"
-
 # Controlla se un file di log è stato passato come argomento
 if [ -z "$1" ]; then
   echo "Uso: $0 <file_di_log>" >&2
@@ -42,11 +34,33 @@ fi
 
 LOG_FILE="$1"
 
+# Assicurati che la cartella principale esista
+if [ ! -d "$HOST_LOG_DIR" ]; then
+  echo "La cartella $HOST_LOG_DIR non esiste."
+  exit 1
+fi
+
+# Cambia nella cartella principale
+cd "$HOST_LOG_DIR" || exit
+
+# Elenca tutto ciò che c'è nella cartella, tranne process_log, e rimuovilo
+for item in *; do
+  if [ "$item" != "process_log" ]; then
+    rm -rf "$item"
+  fi
+done
+
+echo "Operazione completata."
+
 # Verifica se il file di log esiste
 if [ ! -f "$HOST_LOG_DIR/process_log/$LOG_FILE" ]; then
   echo "Il file di log $HOST_LOG_DIR/process_log/$LOG_FILE non esiste." | tee -a "$SCRIPT_LOG_FILE"
   exit 1
 fi
+
+# Crea la directory per i log dei container se non esiste
+mkdir -p "$CONTAINER_LOG_DIR"
+echo "La directory per i log dei container $CONTAINER_LOG_DIR è stata creata." | tee -a "$SCRIPT_LOG_FILE"
 
 # Calcola il tempo di inizio
 START_TIME=$(date +%s)
@@ -73,16 +87,12 @@ is_container_running() {
   [ "$(docker inspect -f '{{.State.Status}}' "$container_name" 2>/dev/null)" == "running" ]
 }
 
-# Recupera l'ID utente e l'ID gruppo dell'utente corrente
-USER_ID=$(id -u)
-GROUP_ID=$(id -g)
-
 # Avvia i container in batch
 for ((batch_start=0; batch_start<TOTAL_CONTAINERS; batch_start+=BATCH_SIZE)); do
   echo "Avvio del batch di container ${batch_start} fino a $((batch_start + BATCH_SIZE - 1)) per $LOG_FILE." | tee -a "$SCRIPT_LOG_FILE"
 
   # Avvia il batch di container
-  for ((i=batch_start; i<batch_start + BATCH_SIZE && i<TOTAL_CONTAINERS; i++)); do
+  for ((i=batch_start; i<batch_start + BATCH_SIZE  && i<TOTAL_CONTAINERS; i++)); do
     # Nome del container con un suffisso numerico
     CONTAINER_NAME="${BASE_NAME}_$(basename "$LOG_FILE" .log)_$((i+1))"
 
