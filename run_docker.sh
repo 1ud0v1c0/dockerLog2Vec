@@ -1,18 +1,18 @@
 #!/bin/bash
 
-set -e  # Ferma l'esecuzione dello script se un comando fallisce
+set -euo pipefail  # Ferma lo script se ci sono errori o variabili non inizializzate
 
 # Nome base per i container
 BASE_NAME="log2vec_container"
 
 # Numero massimo di container per batch
-BATCH_SIZE=5
+BATCH_SIZE=5 
 
 # Numero massimo di container da creare
 TOTAL_CONTAINERS=10
 
 # Directory di log sul sistema host
-HOST_LOG_DIR="/data/users/ludovico/logs"
+HOST_LOG_DIR="./logs"
 
 # Directory per i log dei container
 CONTAINER_LOG_DIR="$HOST_LOG_DIR/container_log"
@@ -26,9 +26,20 @@ CONTAINER_TIMEOUT=600  # 10 minuti
 # Intervallo tra i controlli dello stato dei container (in secondi)
 CHECK_INTERVAL=60
 
+# Percorso degli script Python nella stessa directory dello script bash
+SCRIPT_DIR="$(pwd)"
+EMAIL_SCRIPT_PATH="$SCRIPT_DIR/email_send.py"
+CDF_SCRIPT_PATH="$SCRIPT_DIR/plot_cdf.py"
+
+# Colori per l'output (se il terminale li supporta)
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m' # Nessun colore
+
 # Controlla se un file di log è stato passato come argomento
-if [ -z "$1" ]; then
-  echo "Uso: $0 <file_di_log>" >&2
+if [ $# -ne 1 ]; then
+  echo -e "${RED}Uso: $0 <file_di_log>${NC}" >&2
   exit 1
 fi
 
@@ -36,41 +47,38 @@ LOG_FILE="$1"
 
 # Assicurati che la cartella principale esista
 if [ ! -d "$HOST_LOG_DIR" ]; then
-  echo "La cartella $HOST_LOG_DIR non esiste."
+  echo -e "${RED}La cartella $HOST_LOG_DIR non esiste.${NC}" >&2
   exit 1
 fi
 
-# Cambia nella cartella principale
-cd "$HOST_LOG_DIR" || exit
+# Funzione per pulire i file di log esistenti
+clean_logs() {
+  echo -e "${YELLOW}Pulizia cartella $HOST_LOG_DIR in corso...${NC}"
+  find "$HOST_LOG_DIR" -mindepth 1 -maxdepth 1 ! -name "process_log" -exec rm -rf {} +
+  echo -e "${GREEN}Pulizia completata.${NC}"
+}
 
-# Elenca tutto ciò che c'è nella cartella, tranne process_log, e rimuovilo
-for item in *; do
-  if [ "$item" != "process_log" ]; then
-    rm -rf "$item"
+# Funzione per creare la directory per i log dei container se non esiste
+create_container_log_dir() {
+  echo -e "${YELLOW}Creazione della directory per i log dei container $CONTAINER_LOG_DIR...${NC}"
+  mkdir -p "$CONTAINER_LOG_DIR"
+  echo -e "${GREEN}Directory creata.${NC}"
+}
+
+# Funzione per verificare se un file di log esiste
+check_log_file_exists() {
+  if [ ! -f "$HOST_LOG_DIR/process_log/$LOG_FILE" ]; then
+    echo -e "${RED}Il file di log $HOST_LOG_DIR/process_log/$LOG_FILE non esiste.${NC}" >&2
+    exit 1
   fi
-done
-
-echo "Operazione completata."
-
-# Verifica se il file di log esiste
-if [ ! -f "$HOST_LOG_DIR/process_log/$LOG_FILE" ]; then
-  echo "Il file di log $HOST_LOG_DIR/process_log/$LOG_FILE non esiste." | tee -a "$SCRIPT_LOG_FILE"
-  exit 1
-fi
-
-# Crea la directory per i log dei container se non esiste
-mkdir -p "$CONTAINER_LOG_DIR"
-echo "La directory per i log dei container $CONTAINER_LOG_DIR è stata creata." | tee -a "$SCRIPT_LOG_FILE"
-
-# Calcola il tempo di inizio
-START_TIME=$(date +%s)
+}
 
 # Funzione per gestire gli errori e inviare un'email di errore
 handle_error() {
   local error_msg="$1"
-  echo "Errore: $error_msg" | tee -a "$SCRIPT_LOG_FILE"
-  if ! python email_send.py -f "$HOST_LOG_DIR" -t "$LOG_FILE" -e; then
-    echo "Errore: Impossibile inviare l'email di errore." | tee -a "$SCRIPT_LOG_FILE"
+  echo -e "${RED}Errore: $error_msg${NC}" | tee -a "$SCRIPT_LOG_FILE"
+  if ! python "$EMAIL_SCRIPT_PATH" -f "$HOST_LOG_DIR" -t "$LOG_FILE" -e; then
+    echo -e "${RED}Errore: Impossibile inviare l'email di errore.${NC}" | tee -a "$SCRIPT_LOG_FILE"
   fi
   exit 1
 }
@@ -87,90 +95,111 @@ is_container_running() {
   [ "$(docker inspect -f '{{.State.Status}}' "$container_name" 2>/dev/null)" == "running" ]
 }
 
-# Avvia i container in batch
-for ((batch_start=0; batch_start<TOTAL_CONTAINERS; batch_start+=BATCH_SIZE)); do
-  echo "Avvio del batch di container ${batch_start} fino a $((batch_start + BATCH_SIZE - 1)) per $LOG_FILE." | tee -a "$SCRIPT_LOG_FILE"
+# Funzione per avviare i container in batch
+start_containers_in_batch() {
+  local batch_start=$1
+  echo -e "Avvio del batch di container ${batch_start} fino a $((batch_start + BATCH_SIZE - 1)) per $LOG_FILE." | tee -a "$SCRIPT_LOG_FILE"
 
-  # Avvia il batch di container
-  for ((i=batch_start; i<batch_start + BATCH_SIZE  && i<TOTAL_CONTAINERS; i++)); do
-    # Nome del container con un suffisso numerico
-    CONTAINER_NAME="${BASE_NAME}_$(basename "$LOG_FILE" .log)_$((i+1))"
+  for ((i=batch_start; i<batch_start + BATCH_SIZE && i<TOTAL_CONTAINERS; i++)); do
+    local container_name="${BASE_NAME}_$(basename "$LOG_FILE" .log)_$((i + 1))"
+    local base_name_var="${LOG_FILE%.*}_$((i + 1))"
+    local container_log_file="$CONTAINER_LOG_DIR/${container_name}.log"
 
-    # Nome della variabile d'ambiente per il percorso dei risultati
-    BASE_NAME_VAR="${LOG_FILE%.*}_$((i+1))"
-
-    # File di log per il container
-    CONTAINER_LOG_FILE="$CONTAINER_LOG_DIR/${CONTAINER_NAME}.log"
-
-    # Esecuzione del container
-    echo "Avvio del container $CONTAINER_NAME, processando $LOG_FILE." | tee -a "$SCRIPT_LOG_FILE"
+    echo -e "Avvio del container $container_name, processando $LOG_FILE." | tee -a "$SCRIPT_LOG_FILE"
     if ! docker run --platform linux/amd64 --rm -d \
-      --name "$CONTAINER_NAME" \
+      --name "$container_name" \
       -v "$HOST_LOG_DIR:/logs" \
       -v "$CONTAINER_LOG_DIR:/logs/container_log" \
-      -e BASE_NAME="$BASE_NAME_VAR" \
+      -e BASE_NAME="$base_name_var" \
       -e LOG_FILE="$LOG_FILE" \
-      -e CONTAINER_NAME="$CONTAINER_NAME" \
-      --user $USER_ID:$GROUP_ID \
+      -e CONTAINER_NAME="$container_name" \
       log2vec_custom > /dev/null; then
-      handle_error "Errore nella creazione e avvio del container $CONTAINER_NAME."
+      handle_error "Errore nella creazione e avvio del container $container_name."
     fi
 
-    echo "Container $CONTAINER_NAME creato e avviato con successo." | tee -a "$SCRIPT_LOG_FILE"
+    echo -e "${GREEN}Container $container_name creato e avviato con successo.${NC}" | tee -a "$SCRIPT_LOG_FILE"
   done
+}
 
-  # Attendi il completamento di tutti i container del batch
-  echo "Attesa del completamento del batch di container ${batch_start} fino a $((batch_start + BATCH_SIZE - 1))." | tee -a "$SCRIPT_LOG_FILE"
-  
-  # Controlla lo stato dei container periodicamente fino a un timeout massimo
-  SECONDS_ELAPSED=0
-  while [ $SECONDS_ELAPSED -lt $CONTAINER_TIMEOUT ]; do
-    all_finished=true
+# Funzione per attendere il completamento dei container
+wait_for_containers() {
+  local batch_start=$1
+  echo -e "${YELLOW}Attesa del completamento del batch di container ${batch_start} fino a $((batch_start + BATCH_SIZE - 1)).${NC}" | tee -a "$SCRIPT_LOG_FILE"
+
+  local seconds_elapsed=0
+  while [ $seconds_elapsed -lt $CONTAINER_TIMEOUT ]; do
+    local all_finished=true
 
     for ((i=batch_start; i<batch_start + BATCH_SIZE && i<TOTAL_CONTAINERS; i++)); do
-      CONTAINER_NAME="${BASE_NAME}_$(basename "$LOG_FILE" .log)_$((i+1))"
+      local container_name="${BASE_NAME}_$(basename "$LOG_FILE" .log)_$((i + 1))"
       
-      if container_exists "$CONTAINER_NAME"; then
-        if is_container_running "$CONTAINER_NAME"; then
+      if container_exists "$container_name"; then
+        if is_container_running "$container_name"; then
           all_finished=false
         else
-          echo "Il container $CONTAINER_NAME ha completato l'esecuzione." | tee -a "$SCRIPT_LOG_FILE"
+          echo -e "${GREEN}Il container $container_name ha completato l'esecuzione.${NC}" | tee -a "$SCRIPT_LOG_FILE"
         fi
       else
-        echo "Il container $CONTAINER_NAME non esiste." | tee -a "$SCRIPT_LOG_FILE"
+        echo -e "${RED}Il container $container_name non esiste.${NC}" | tee -a "$SCRIPT_LOG_FILE"
       fi
     done
 
     if [ "$all_finished" = true ]; then
-      echo "Tutti i container del batch ${batch_start} fino a $((batch_start + BATCH_SIZE - 1)) hanno completato l'esecuzione." | tee -a "$SCRIPT_LOG_FILE"
-      break
+      echo -e "${GREEN}Tutti i container del batch ${batch_start} fino a $((batch_start + BATCH_SIZE - 1)) hanno completato l'esecuzione.${NC}" | tee -a "$SCRIPT_LOG_FILE"
+      echo "" | tee -a "$SCRIPT_LOG_FILE"
+      return
     fi
 
-    echo "Alcuni container sono ancora in esecuzione, attendo $CHECK_INTERVAL secondi prima del prossimo controllo..." | tee -a "$SCRIPT_LOG_FILE"
+    echo -e "${YELLOW}Alcuni container sono ancora in esecuzione, attendo $CHECK_INTERVAL secondi prima del prossimo controllo...${NC}" | tee -a "$SCRIPT_LOG_FILE"
     sleep $CHECK_INTERVAL
-    SECONDS_ELAPSED=$((SECONDS_ELAPSED + CHECK_INTERVAL))
+    seconds_elapsed=$((seconds_elapsed + CHECK_INTERVAL))
   done
 
-  if [ $SECONDS_ELAPSED -ge $CONTAINER_TIMEOUT ]; then
-    handle_error "Timeout durante l'attesa del completamento dei container nel batch ${batch_start}."
+  handle_error "Timeout durante l'attesa del completamento dei container nel batch ${batch_start}."
+}
+
+# Funzione per calcolare la CDF
+calculate_cdf() {
+  echo -e "${YELLOW}Calcolo della CDF in corso...${NC}" | tee -a "$SCRIPT_LOG_FILE"
+  if ! python "$CDF_SCRIPT_PATH" "$HOST_LOG_DIR/results" "$HOST_LOG_DIR/results/all_scores.txt" "$HOST_LOG_DIR/results/cdf_plot.png"; then
+    handle_error "Errore durante il calcolo della CDF."
   fi
+  echo -e "${GREEN}Calcolo della CDF completato con successo.${NC}" | tee -a "$SCRIPT_LOG_FILE"
+}
+
+# Funzione per inviare l'email finale
+send_final_email() {
+  local duration=$1
+  echo -e "${YELLOW}Invio dell'email finale...${NC}" | tee -a "$SCRIPT_LOG_FILE"
+  if ! python "$EMAIL_SCRIPT_PATH" -f "$HOST_LOG_DIR" -t "$LOG_FILE" -d "$duration" -n "$TOTAL_CONTAINERS"; then
+    handle_error "Errore: Impossibile inviare l'email."
+  fi
+  echo -e "${GREEN}-- Finish --${NC}" | tee -a "$SCRIPT_LOG_FILE"
+}
+
+# Inizio dello script
+clean_logs
+create_container_log_dir
+
+echo ""
+echo -e "${GREEN}-- Inizio dello script --${NC}" | tee -a "$SCRIPT_LOG_FILE"
+# Visualizzazione dei valori a video
+echo -e "Numero massimo di container per batch: ${GREEN}$BATCH_SIZE${NC}" | tee -a "$SCRIPT_LOG_FILE"
+echo -e "Numero massimo di container da creare: ${GREEN}$TOTAL_CONTAINERS${NC}" | tee -a "$SCRIPT_LOG_FILE"
+echo -e "Directory di log sul sistema host: ${GREEN}$HOST_LOG_DIR${NC}" | tee -a "$SCRIPT_LOG_FILE"
+echo ""
+check_log_file_exists
+
+START_TIME=$(date +%s)
+
+for ((batch_start=0; batch_start<TOTAL_CONTAINERS; batch_start+=BATCH_SIZE)); do
+  start_containers_in_batch "$batch_start"
+  wait_for_containers "$batch_start"
 done
 
-# Calcolo della CDF
-if ! python plot_cdf.py "$HOST_LOG_DIR/results" "$HOST_LOG_DIR/results/all_scores.txt" "$HOST_LOG_DIR/results/cdf_plot.png"; then
-  handle_error "Errore durante il calcolo della CDF."
-fi
+calculate_cdf
 
-echo "Calcolo della CDF completato con successo." | tee -a "$SCRIPT_LOG_FILE"
-
-# Calcola il tempo di fine
 END_TIME=$(date +%s)
 DURATION=$((END_TIME - START_TIME))
 
-# Esegui lo script di gestione dei log e invio email
-EMAIL_SCRIPT_PATH="email_send.py"  # Assicurati che il percorso sia corretto
-if ! python "$EMAIL_SCRIPT_PATH" -f "$HOST_LOG_DIR" -t "$LOG_FILE" -d "$DURATION" -n "$TOTAL_CONTAINERS"; then
-  handle_error "Errore: Impossibile inviare l'email."
-fi
-
-echo "-- Finish --" | tee -a "$SCRIPT_LOG_FILE"
+send_final_email "$DURATION"
