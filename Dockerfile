@@ -4,6 +4,9 @@ FROM python:3.7-slim
 # Imposta la variabile d'ambiente per evitare problemi con i permessi
 ENV DEBIAN_FRONTEND=noninteractive
 
+# Passa all'utente non root
+USER myuser
+
 # Installa le dipendenze di sistema necessarie
 RUN apt-get update && \
     apt-get install -y \

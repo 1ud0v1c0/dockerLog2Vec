@@ -73,6 +73,10 @@ is_container_running() {
   [ "$(docker inspect -f '{{.State.Status}}' "$container_name" 2>/dev/null)" == "running" ]
 }
 
+# Recupera l'ID utente e l'ID gruppo dell'utente corrente
+USER_ID=$(id -u)
+GROUP_ID=$(id -g)
+
 # Avvia i container in batch
 for ((batch_start=0; batch_start<TOTAL_CONTAINERS; batch_start+=BATCH_SIZE)); do
   echo "Avvio del batch di container ${batch_start} fino a $((batch_start + BATCH_SIZE - 1)) per $LOG_FILE." | tee -a "$SCRIPT_LOG_FILE"
@@ -97,6 +101,7 @@ for ((batch_start=0; batch_start<TOTAL_CONTAINERS; batch_start+=BATCH_SIZE)); do
       -e BASE_NAME="$BASE_NAME_VAR" \
       -e LOG_FILE="$LOG_FILE" \
       -e CONTAINER_NAME="$CONTAINER_NAME" \
+      --user $USER_ID:$GROUP_ID \
       log2vec_custom > /dev/null; then
       handle_error "Errore nella creazione e avvio del container $CONTAINER_NAME."
     fi
