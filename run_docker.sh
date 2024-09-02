@@ -12,10 +12,10 @@ BATCH_SIZE=5
 TOTAL_CONTAINERS=10
 
 # Directory di log sul sistema host
-HOST_LOG_DIR="./logs"
+HOST_LOG_DIR="/data/users/ludovico/logs"
 
 # Directory per i log dei container
-CONTAINER_LOG_DIR="./logs/container_log"
+CONTAINER_LOG_DIR="$HOST_LOG_DIR/container_log"
 
 # File di log per lo script bash
 SCRIPT_LOG_FILE="$CONTAINER_LOG_DIR/script_execution.log"
