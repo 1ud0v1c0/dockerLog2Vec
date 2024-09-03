@@ -6,13 +6,13 @@ set -euo pipefail  # Ferma lo script se ci sono errori o variabili non inizializ
 BASE_NAME="log2vec_container"
 
 # Numero massimo di container per batch
-BATCH_SIZE=5 
+BATCH_SIZE=5
 
 # Numero massimo di container da creare
 TOTAL_CONTAINERS=10
 
 # Directory di log sul sistema host
-HOST_LOG_DIR="./logs"
+HOST_LOG_DIR="/data/users/ludovico/logs"
 
 # Directory per i log dei container
 CONTAINER_LOG_DIR="$HOST_LOG_DIR/container_log"
@@ -24,7 +24,7 @@ SCRIPT_LOG_FILE="$CONTAINER_LOG_DIR/script_execution.log"
 CONTAINER_TIMEOUT=600  # 10 minuti
 
 # Intervallo tra i controlli dello stato dei container (in secondi)
-CHECK_INTERVAL=60
+CHECK_INTERVAL=70
 
 # Percorso degli script Python nella stessa directory dello script bash
 SCRIPT_DIR="$(pwd)"
@@ -109,11 +109,10 @@ start_containers_in_batch() {
     if ! docker run --platform linux/amd64 --rm -d \
       --name "$container_name" \
       -v "$HOST_LOG_DIR:/logs" \
-      -v "$CONTAINER_LOG_DIR:/logs/container_log" \
       -e BASE_NAME="$base_name_var" \
       -e LOG_FILE="$LOG_FILE" \
       -e CONTAINER_NAME="$container_name" \
-      log2vec_custom > /dev/null; then
+      log2vec_docker > /dev/null; then
       handle_error "Errore nella creazione e avvio del container $container_name."
     fi
 

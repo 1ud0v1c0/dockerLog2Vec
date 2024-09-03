@@ -1,35 +1,27 @@
-# Usa una immagine base di Python
-FROM python:3.7-slim
+# Usa un'immagine base di Python per x86_64
+FROM python:3.6
 
-# Imposta la variabile d'ambiente per evitare problemi con i permessi
+# Imposta le variabili di ambiente per evitare domande durante l'installazione
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Installa le dipendenze di sistema necessarie
 RUN apt-get update && \
-    apt-get install -y \
+    apt-get install -y --no-install-recommends \
     build-essential \
-    libffi-dev \
-    libblas-dev \
-    liblapack-dev \
-    git \
     && rm -rf /var/lib/apt/lists/*
 
 # Installa le dipendenze Python
-RUN pip install --upgrade pip
-RUN pip install nltk \
+RUN pip install --upgrade pip && \
+    pip install nltk \
                 spacy \
                 progressbar2 \
                 gensim==3.8.3 \
-                dynet \
-                matplotlib \
-                requests \
-                pandas \
-                numpy
-
+                dynet 
 
 # Scarica i modelli e risorse necessari
-RUN python -m nltk.downloader wordnet
-RUN python -m spacy download en_core_web_md
+RUN python -m nltk.downloader wordnet && \
+    python -m nltk.downloader omw-1.4 && \
+    python -m spacy download en_core_web_md
 
 # Crea una directory di lavoro
 WORKDIR /app

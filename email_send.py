@@ -46,10 +46,33 @@ def zip_folder(folder_path, output_path):
             # Se nessun file o cartella è stato aggiunto, solleva un'eccezione
             if not files_added:
                 raise FileNotFoundError("Nessun file o cartella specificato è stato trovato per la compressione.")
-
+            
     except Exception as e:
         print(f"Errore durante la creazione del file zip: {e}")
         raise
+    
+def zip_folder_all(folder_path, output_path):
+    """ Zippa l'intera cartella inclusi tutti i file e sottocartelle """
+    
+    # Verifica che la cartella esista
+    if not os.path.exists(folder_path):
+        raise FileNotFoundError(f"La cartella {folder_path} non esiste.")
+    
+    try:
+        # Crea un file zip
+        with zipfile.ZipFile(output_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
+            # Cammina attraverso la cartella e aggiungi file e sottocartelle
+            for root, dirs, files in os.walk(folder_path):
+                for file in files:
+                    file_path = os.path.join(root, file)
+                    # Aggiungi i file all'archivio zip mantenendo la struttura della cartella
+                    zipf.write(file_path, os.path.relpath(file_path, folder_path))
+    
+    except Exception as e:
+        print(f"Errore durante la creazione del file zip: {e}")
+        raise
+
+
 
 def send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, attachment_path=None):
     """ Invia un'email con un file allegato opzionale """
@@ -113,7 +136,7 @@ if __name__ == "__main__":
         ensure_dir_exists(os.path.dirname(zip_file_path))
         
         # Zippa la cartella
-        zip_folder(folder_to_zip, zip_file_path)
+        zip_folder_all(folder_to_zip, zip_file_path)
         
         if args.e:
             # Dettagli email in caso di errore
@@ -121,7 +144,7 @@ if __name__ == "__main__":
             body = "Si è verificato un errore durante l'esecuzione del processo. Vedi l'allegato per i dettagli."
 
             # Invia l'email di errore
-            send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, zip_file_path)
+            # send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, zip_file_path)
         else:
             if args.d and args.n:
                 # Converti la durata da secondi a ore, minuti e secondi
@@ -134,7 +157,7 @@ if __name__ == "__main__":
                         f'Durata totale: {hours} ore, {minutes} minuti e {seconds} secondi\n')
 
                 # Invia l'email di successo
-                send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, zip_file_path)
+                # send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, zip_file_path)
             else:
                 print("Errore: è necessario specificare -d e -n se non si usa -e.")
                 
@@ -145,4 +168,4 @@ if __name__ == "__main__":
             # Solo se non è stato passato -e, invia una notifica di errore
             subject = 'ERROR DURING PROCESS EXECUTION'
             body = "Si è verificato un errore durante l'esecuzione del processo. Controlla il log per ulteriori dettagli."
-            send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, zip_file_path)
+            # send_email(smtp_server, smtp_port, sender_email, receiver_email, subject, body, zip_file_path)
