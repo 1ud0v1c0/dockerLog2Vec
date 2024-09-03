@@ -12,6 +12,7 @@ BATCH_SIZE=5
 TOTAL_CONTAINERS=10
 
 # Directory di log sul sistema host
+#HOST_LOG_DIR="./logs"
 HOST_LOG_DIR="/data/users/ludovico/logs"
 
 # Directory per i log dei container
@@ -108,6 +109,7 @@ start_containers_in_batch() {
     echo -e "Avvio del container $container_name, processando $LOG_FILE." | tee -a "$SCRIPT_LOG_FILE"
     if ! docker run --platform linux/amd64 --rm -d \
       --name "$container_name" \
+      --user ludovico:ludovico \
       -v "$HOST_LOG_DIR:/logs" \
       -e BASE_NAME="$base_name_var" \
       -e LOG_FILE="$LOG_FILE" \

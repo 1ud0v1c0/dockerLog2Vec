@@ -4,6 +4,9 @@ FROM python:3.6
 # Imposta le variabili di ambiente per evitare domande durante l'installazione
 ENV DEBIAN_FRONTEND=noninteractive
 
+# Imposta l'utente
+USER ludovico
+
 # Installa le dipendenze di sistema necessarie
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \

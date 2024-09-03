@@ -79,15 +79,6 @@ if [ $? -eq 0 ]; then
     if [ $? -eq 0 ]; then
       echo "Cartella $BASE_NAME spostata con successo in /logs/results/" | tee -a "$LOG_FILE_PATH"
       
-      # Modifica la proprietà e i permessi della cartella dei risultati
-      chown -R ludovico:ludovico /logs/results
-      chmod -R 775 /logs/results
-      if [ $? -eq 0 ]; then
-        echo "Proprietà e permessi della cartella /logs/results modificati con successo." | tee -a "$LOG_FILE_PATH"
-      else
-        echo "Errore durante la modifica della proprietà e dei permessi della cartella /logs/results." | tee -a "$LOG_FILE_PATH"
-        exit 1
-      fi
     else
       echo "Errore durante lo spostamento della cartella $BASE_NAME in /logs/results/" | tee -a "$LOG_FILE_PATH"
       exit 1

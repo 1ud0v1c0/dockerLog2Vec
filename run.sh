@@ -11,6 +11,7 @@ NUM_RUNS=5
 LOG_BASENAME=$(basename "$LOG_PROCESS" .log)
 
 # Cartella di destinazione per i file rinominati
+#DESTINATION_DIR="/Users/ludovicovitiello/Desktop/Tesi/Risultati_2/$LOG_BASENAME"
 DESTINATION_DIR="/data/users/ludovico/Risultati/$LOG_BASENAME"
 
 # Crea la cartella di destinazione se non esiste
