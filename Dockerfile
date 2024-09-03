@@ -4,8 +4,8 @@ FROM python:3.6
 # Imposta le variabili di ambiente per evitare domande durante l'installazione
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Imposta l'utente
-USER ludovico
+# Crea un utente e un gruppo non root
+RUN groupadd -r ludovico && useradd -r -g ludovico -m ludovico
 
 # Installa le dipendenze di sistema necessarie
 RUN apt-get update && \
@@ -19,7 +19,7 @@ RUN pip install --upgrade pip && \
                 spacy \
                 progressbar2 \
                 gensim==3.8.3 \
-                dynet 
+                dynet
 
 # Scarica i modelli e risorse necessari
 RUN python -m nltk.downloader wordnet && \
@@ -35,7 +35,5 @@ RUN git clone https://github.com/NetManAIOps/Log2Vec.git /Log2Vec
 # Copia lo script bash nel contenitore
 COPY run_log2vec.sh /app/
 
-
 # Esegui lo script bash come entrypoint
 ENTRYPOINT ["/app/run_log2vec.sh"]
-
