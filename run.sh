@@ -2,7 +2,7 @@
 
 # Nome dello script che vuoi eseguire ripetutamente
 TARGET_SCRIPT="./run_docker.sh"
-LOG_PROCESS="K8s_controller.log"
+LOG_PROCESS="K8s_scheduler.log"
 
 # Numero di volte che lo script deve essere eseguito
 NUM_RUNS=5
@@ -11,8 +11,8 @@ NUM_RUNS=5
 LOG_BASENAME=$(basename "$LOG_PROCESS" .log)
 
 # Cartella di destinazione per i file rinominati
-#DESTINATION_DIR="/Users/ludovicovitiello/Desktop/Tesi/Risultati_2/$LOG_BASENAME"
-DESTINATION_DIR="/data/users/ludovico/Risultati/$LOG_BASENAME"
+DESTINATION_DIR="/Users/ludovicovitiello/Desktop/Tesi/Risultati_2/$LOG_BASENAME"
+#DESTINATION_DIR="/data/users/ludovico/Risultati/$LOG_BASENAME"
 
 # Crea la cartella di destinazione se non esiste
 mkdir -p "$DESTINATION_DIR"

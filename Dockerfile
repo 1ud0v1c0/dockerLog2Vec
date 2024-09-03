@@ -4,9 +4,6 @@ FROM python:3.6
 # Imposta le variabili di ambiente per evitare domande durante l'installazione
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Crea un utente e un gruppo non root
-RUN groupadd -r ludovico && useradd -r -g ludovico -m ludovico
-
 # Installa le dipendenze di sistema necessarie
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
